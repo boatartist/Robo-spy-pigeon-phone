@@ -8,3 +8,15 @@ With these ideas in mind I have a bunch of features I want to implement at some 
 
 ![WIN_20240516_12_24_25_Scan](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/e0a665ed-67cb-4014-8c68-2e687821655a)
 ![WIN_20240516_12_25_56_Scan](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/6f2c601f-394f-4fe3-896c-14ff19c58ae7)
+
+Look at the little cyborg pigeon!!!❤️❤️❤️❤️ I'm so proud of my non-existent drawing skills. If you can't read my handwriting (valid, I can't either), here's some of the highlights:
+
+- cute little perch
+- holds a little pencil
+- camera (or is it a death laser?)
+- touchscreen
+- eyes follow you around
+- full 360° vision, head rotates
+- foot clamps/jointed toes (taking inspiration from nerdforge's prosthetic finger but it defaults to contracted so it doesn't fall off the perch)
+- Bits that move (perched edition): feet lift and flap, head rotates = 3 servos, optional bonus: balance body by tilting
+- also some sound effects/comments ie. eeeee, creeeeak, ring ring..., unknown phone number...
