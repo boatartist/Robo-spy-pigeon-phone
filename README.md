@@ -32,3 +32,16 @@ I also found some old(er) sketches and plans from when I wanted to make a cockat
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/08a2796a-752b-45f6-a16d-ad7dbbedd2ad)
 ![WIN_20240528_20_20_27_Scan](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/01198416-49a5-4d13-a8f2-95e78d5ec8a3)
 I probably shouldn't include that last one actually, it's kinda ruining the sci-fi super villain aesthetic I keep imagining. I don't wanna be strutting around with my cool pirate parrot pigeon phone on my shoulder acting all fancy and then get jump-scared by my 16y/o late night ramblings, but whatever.
+
+## June 02, 2024 (I think, this is a retrospective post)
+I tried to make a bird shape in solidworks and it went disastrously wrong. Luckily my dad is a literal designer so he showed me how to do it and mine are still terrible but i got some ideas about how to do it, later. This was the dumpy model my dad whipped up in like 10 minutes, I think mine are right at the bottom of the windows rubbish bin.
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/622d17b7-626a-4f9a-9f2c-d02b641bd462)
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/8e6f3bed-820f-4a98-b4fb-109ceb701017)
+
+## June 09, 2024
+Feet! (No not like that stop being dirty minded). I figured this was as good a place as any to start my project, so I've spent this weekend wasting filament and masking tape on prototypes, until I got to a design that I think will do for now. My original concept was inspired by prosthetic finger designs (Shout out to Nerdforge on Youtube for the inspiration), which have contract when a string is yanked and then have a bit of elastic which defaults them to open again. Obviously a bird clinging to a perch for dear life has quite the opposite motivations, so my design had a bit of string on the outside which gets pulled by a servo to open the claws and then a piece of elastic pulling them closed again, as can be seen in this low-res night photo.
+![WIN_20240609_19_17_24_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/24ccbe44-e2e9-46a6-ad14-0b6d771a9bf7)
+This design seemed great on paper but left more than a little to be desired in real life, so I created a new design featuring the coolest thing I know nothing about: gears. After a loooong time in solidworks I finally got something that kind of works, so my current foot design looks like this:
+![WIN_20240609_19_19_10_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/03e079a5-b7f3-41b0-9a06-832dcd0e71f8)
+![WIN_20240609_19_18_48_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/92ea8066-b827-4297-b5eb-cd4bbecca48f)
+I'll put the current cad files up if there's anyone interested (that's a little inside joke because there's noone here at all lol)
