@@ -45,3 +45,15 @@ This design seemed great on paper but left more than a little to be desired in r
 ![WIN_20240609_19_19_10_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/03e079a5-b7f3-41b0-9a06-832dcd0e71f8)
 ![WIN_20240609_19_18_48_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/92ea8066-b827-4297-b5eb-cd4bbecca48f)
 I'll put the current cad files up if there's anyone interested (that's a little inside joke because there's noone here at all lol)
+
+## June 16, 2024
+I figured out how to get blender on my school laptop and I've finally got a terrible low-poly model which I'm going to polish up in Solidworks (stl file up now)
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/f196effa-0f99-410b-8606-b46fe0e7c1e1)
+
+This is a photo of a tiny 3D print I did of it, just for fun, I think it looks pretty good.
+![WIN_20240616_14_55_46_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/c3a70914-966a-4a60-aeb3-b3e95454be29)
+I also realised that I haven't put up the fancy drawings I did, oops, here they are now.
+![WIN_20240616_11_46_52_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/6bdf42ea-ce33-4253-97e3-869f63633a92)
+Umm, what else? Oh yes, I bought a [usb modem](https://www.telstra.com.au/internet/mobile-broadband/prepaid/4gx-mf833v-usb) to use instead of the raspberry pi hat I had for my phone project, which unfortunately broke. Hoping that having an actual professional thing will make this a bit less dodgy. 
+I'm also going to buy [a little round touchscreen](https://core-electronics.com.au/128inch-round-lcd-display-module-with-touch-240240-pixels.html), which I'm really excited about, hopefully we start getting some actual progress soon!
