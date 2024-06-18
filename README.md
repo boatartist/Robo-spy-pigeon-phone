@@ -39,7 +39,7 @@ I tried to make a bird shape in solidworks and it went disastrously wrong. Lucki
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/8e6f3bed-820f-4a98-b4fb-109ceb701017)
 
 ## June 09, 2024
-Feet! (No not like that stop being dirty minded). I figured this was as good a place as any to start my project, so I've spent this weekend wasting filament and masking tape on prototypes, until I got to a design that I think will do for now. My original concept was inspired by prosthetic finger designs (Shout out to Nerdforge on Youtube for the inspiration), which have contract when a string is yanked and then have a bit of elastic which defaults them to open again. Obviously a bird clinging to a perch for dear life has quite the opposite motivations, so my design had a bit of string on the outside which gets pulled by a servo to open the claws and then a piece of elastic pulling them closed again, as can be seen in this low-res night photo.
+~~Feet! (No not like that stop being dirty minded).~~ (This joke has been redacted because everyone keeps judging me (valid ig)). I figured this was as good a place as any to start my project, so I've spent this weekend wasting filament and masking tape on prototypes, until I got to a design that I think will do for now. My original concept was inspired by prosthetic finger designs (Shout out to Nerdforge on Youtube for the inspiration), which have contract when a string is yanked and then have a bit of elastic which defaults them to open again. Obviously a bird clinging to a perch for dear life has quite the opposite motivations, so my design had a bit of string on the outside which gets pulled by a servo to open the claws and then a piece of elastic pulling them closed again, as can be seen in this low-res night photo.
 ![WIN_20240609_19_17_24_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/24ccbe44-e2e9-46a6-ad14-0b6d771a9bf7)
 This design seemed great on paper but left more than a little to be desired in real life, so I created a new design featuring the coolest thing I know nothing about: gears. After a loooong time in solidworks I finally got something that kind of works, so my current foot design looks like this:
 ![WIN_20240609_19_19_10_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/03e079a5-b7f3-41b0-9a06-832dcd0e71f8)
@@ -57,3 +57,13 @@ I also realised that I haven't put up the fancy drawings I did, oops, here they 
 ![WIN_20240616_11_46_52_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/6bdf42ea-ce33-4253-97e3-869f63633a92)
 Umm, what else? Oh yes, I bought a [usb modem](https://www.telstra.com.au/internet/mobile-broadband/prepaid/4gx-mf833v-usb) to use instead of the raspberry pi hat I had for my phone project, which unfortunately broke. Hoping that having an actual professional thing will make this a bit less dodgy. 
 I'm also going to buy [a little round touchscreen](https://core-electronics.com.au/128inch-round-lcd-display-module-with-touch-240240-pixels.html), which I'm really excited about, hopefully we start getting some actual progress soon!
+
+## June 18, 2024
+Welcome to the total of 2 people I shared the link to this with, here's the things I did today and at the end of the weekend.
+1. I chopped the blender model in half and hollowed out the head so I could put a raspberry pi camera in there, the stl can be found on this github but it's not a final product by any means.
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/e5be9bc5-a6cf-4575-9906-b623f8420ea4)
+
+2. I bought a cheap usb cable and a usb socket which I soldered together so that the modem doesn't have to stick straight out of the side of the raspberry pi, instead I can attach it via the dodgy cable and position it around the side. I would advise anyone thinking of copying this project to invest in an official cable ([like this one maybe](https://www.amazon.com.au/Degree-Angled-Female-Extension-Adapter/dp/B015H0KUEI?th=1)), I melted quite a lot of plastic and had to restart several times from fragile cables breaking.
+![WIN_20240618_19_49_22_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/9d7dc34b-4597-4e6e-bffa-2d3c0c68b07e)
+![WIN_20240618_19_50_09_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d0bb3d2a-c7b1-47a7-80f5-67778a302ffb)
+
