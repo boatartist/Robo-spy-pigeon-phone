@@ -62,6 +62,7 @@ I'm also going to buy [a little round touchscreen](https://core-electronics.com.
 Welcome to the total of 2 people I shared the link to this with, here's the things I did today and at the end of the weekend.
 1. I chopped the blender model in half and hollowed out the head so I could put a raspberry pi camera in there, the stl can be found on this github but it's not a final product by any means.
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/e5be9bc5-a6cf-4575-9906-b623f8420ea4)
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/1703c0cc-184d-49d8-abdc-a2f13d4222ed)
 
 2. I bought a cheap usb cable and a usb socket which I soldered together so that the modem doesn't have to stick straight out of the side of the raspberry pi, instead I can attach it via the dodgy cable and position it around the side. I would advise anyone thinking of copying this project to invest in an official cable ([like this one maybe](https://www.amazon.com.au/Degree-Angled-Female-Extension-Adapter/dp/B015H0KUEI?th=1)), I melted quite a lot of plastic and had to restart several times from fragile cables breaking.
 ![WIN_20240618_19_49_22_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/9d7dc34b-4597-4e6e-bffa-2d3c0c68b07e)
