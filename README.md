@@ -68,3 +68,7 @@ Welcome to the total of 2 people I shared the link to this with, here's the thin
 ![WIN_20240618_19_49_22_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/9d7dc34b-4597-4e6e-bffa-2d3c0c68b07e)
 ![WIN_20240618_19_50_09_Pro](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d0bb3d2a-c7b1-47a7-80f5-67778a302ffb)
 
+## June 25, 2024
+I'm away from the Raspberry Pi rn so I can't test this code, but I've been researching text-to-speech (tts) modules that I can use, because a big feature of the bird is that it's going to give audio notifications and users will be able to converse with the robot instead of just using the screen.
+***!Todo, upload brainstorming of keyboard functionality***
+After much consideration, I've decided to use the Google tts API (gTTS), following [this Geeks for Geeks article](https://www.geeksforgeeks.org/convert-text-speech-python/) because I'm lazy and it looks easy, but also it's really well documented and I can also use the google speech-to-text API so it will look symmetrical in my brain.
