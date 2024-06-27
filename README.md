@@ -79,3 +79,12 @@ tts = gTTS(text='Hello World', lang='en', slow=False)
 tts.save('audio_file.mp3')
 os.system('start audio_file.mp3')
 ```
+
+## June 27, 2024
+I got the gTTS module working, and I'm using the pygame mixer to play audio through the audio jack. I found an old pair of headphones and a speaker from a singing birthday card which I brutally massacred to make this speaker setup I can plug into the audio jack. I might replace the speaker because it's still a little too quiet, but it works for now. 
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/1789b539-49b2-42f3-851f-8c67c5073d02)
+
+In the past I've tried to find a ready-made speaker which would do this for me, but most speakers seem to be the massive round bluetooth speakers, so anyone copying this project I would advise to find a cheap headphone jack part and a small speaker component, that seems like the best option. 
+
+I also improved the head cad file so that the camera fits better and there's also a hole in the other eye for a 5mm led, which I think is pretty cool. I'll upload the new stl alongside the old one, they're pretty similar at this stage. I think the next step is going to be getting my hands on that round display, and also looking at how I'm going to get the microphone working, stay tuned!
