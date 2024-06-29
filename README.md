@@ -86,5 +86,20 @@ I got the gTTS module working, and I'm using the pygame mixer to play audio thro
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/1789b539-49b2-42f3-851f-8c67c5073d02)
 
 In the past I've tried to find a ready-made speaker which would do this for me, but most speakers seem to be the massive round bluetooth speakers, so anyone copying this project I would advise to find a cheap headphone jack part and a small speaker component, that seems like the best option. 
-
 I also improved the head cad file so that the camera fits better and there's also a hole in the other eye for a 5mm led, which I think is pretty cool. I'll upload the new stl alongside the old one, they're pretty similar at this stage. I think the next step is going to be getting my hands on that round display, and also looking at how I'm going to get the microphone working, stay tuned!
+
+## June 30, 2024
+Oops, turns out I did not the gTTS working, it steals its tts from the interwebs, and mine is a bit sketchy rn, so I'm settling for a worse module that's fully offline, [pyttsx3](https://pyttsx3.readthedocs.io/en/latest/engine.html) (I did try to install it's updated sibling pyttsx4 but I'm not bothered to install the module on a computer with internet and then manually install it on the raspberry pi, so we're settling for the one I managed to get). The voices are terrible, but at least it talks and I haven't had any major issues. I also don't need to use the pygame mixer to play my sounds, so that's nice. This is my current code: 
+```import pyttsx3
+engine = pyttsx3.init()
+# reducing the speed of the voice from 200 to 100
+engine.setProperty('rate', 100)
+# I think the english voice is the best, but there's code in the documentation to loop through every voice and test it if you want to find a better one
+engine.setProperty('voice', 'english')
+#say the thing
+engine.say('Hello World, I am pigeon')
+#I think the say() method preloads the audio to the engine, and then this method actually runs it 
+engine.runAndWait()
+```
+Oh and here's a photo of the new head, it's still goofy, but I kinda love it.
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/f94d057c-6710-43c3-bc58-51f36dc41025)
