@@ -103,3 +103,14 @@ engine.runAndWait()
 ```
 Oh and here's a photo of the new head, it's still goofy, but I kinda love it.
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/f94d057c-6710-43c3-bc58-51f36dc41025)
+
+## July 2, 2024
+A quick moment of silent for my realisation that the raspberry pi audio jack does not support the microphone, so I apparently wasted my money and time buying [a new 4-poled plug](https://www.jaycar.com.au/3-5mm-gold-plug-4-pole/p/PP0138?pos=6&queryId=201fd0d2d0470ca55455e4e27b61be16&sort=relevance&searchText=4%20pole#), soldering 4 wires to it and trying to connect the speaker and the microphone to it, ouch. At least I did realise how I could amplify the volume of the speaker using a transistor so now we have this snazzy and compact little set-up on the back of the speaker:
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/7b3f0795-3d35-42ad-9275-6d1ea9ed24b0)
+
+And since I'm overcompensating for my laziness and refusal to make wiring diagrams for my actual school software projects, here's one I whipped up in two minutes:
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/4adc555f-0f90-4180-ad04-e3ea26794a1f)
+
+So it's a bit sad that I did all that for nothing, but at least I have a good result. For now, I'm using a big flat usb mic I bought for a past project that didn't work out, but it's better than nothing until I figure out how to make my own, more compact version with the tiny microphone I bought. Oh and if anyone ever copies this project, [you can get audio output from the gpio pins](https://wiki.batocera.org/audio_via_gpio_rpi_only), which I've been searching for for ages and only discovered after hacking together my solution :( Anyway we live and we learn ig. 
