@@ -114,3 +114,6 @@ And since I'm overcompensating for my laziness and refusal to make wiring diagra
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/4adc555f-0f90-4180-ad04-e3ea26794a1f)
 
 So it's a bit sad that I did all that for nothing, but at least I have a good result. For now, I'm using a big flat usb mic I bought for a past project that didn't work out, but it's better than nothing until I figure out how to make my own, more compact version with the tiny microphone I bought. Oh and if anyone ever copies this project, [you can get audio output from the gpio pins](https://wiki.batocera.org/audio_via_gpio_rpi_only), which I've been searching for for ages and only discovered after hacking together my solution :( Anyway we live and we learn ig. 
+
+## June 3, 2024
+[❤️](http://apachepersonal.miun.se/~muhimr/index_files/Tutorial_4g_modem_with_Raspberry_PI_B_plus.pdf)
