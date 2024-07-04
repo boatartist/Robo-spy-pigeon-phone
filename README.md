@@ -115,5 +115,10 @@ And since I'm overcompensating for my laziness and refusal to make wiring diagra
 
 So it's a bit sad that I did all that for nothing, but at least I have a good result. For now, I'm using a big flat usb mic I bought for a past project that didn't work out, but it's better than nothing until I figure out how to make my own, more compact version with the tiny microphone I bought. Oh and if anyone ever copies this project, [you can get audio output from the gpio pins](https://wiki.batocera.org/audio_via_gpio_rpi_only), which I've been searching for for ages and only discovered after hacking together my solution :( Anyway we live and we learn ig. 
 
-## June 3, 2024
-[❤️](http://apachepersonal.miun.se/~muhimr/index_files/Tutorial_4g_modem_with_Raspberry_PI_B_plus.pdf)
+## July 3, 2024
+❤️ [http://apachepersonal.miun.se/~muhimr/index_files/Tutorial_4g_modem_with_Raspberry_PI_B_plus.pdf](http://apachepersonal.miun.se/~muhimr/index_files/Tutorial_4g_modem_with_Raspberry_PI_B_plus.pdf)
+
+## July 4, 2024
+I was pretty rushed when I posted that article yesterday, I hadn't done much and I just wanted to share the brilliant pdf which unlocked my ability to actually use the usb modem I've bought. So basically what I learnt is that when you go to [192.168.0.1](192.168.0.1) on any device, it takes you to your modem's page, where you can see different diagnostics, change settings and even (if you have a sim-based modem like mine) send and receive text messages. Amazing! This is the best news I've had in ever, because I thought I was going to have to hack together a solution, bypass a billion safeguards and do all sorts of wizardry to even get internet working with the modem, let alone sms on it, but no, I just need to figure out how to steal data from that webpage, praise the lord, god is good, I'm converted, all that jazz⛪✝️
+
+... Actually, maybe not, looks like the website is kind of janky and it doesn't want me to steal from it, or maybe I'm just bad at requests and Beautiful Soup, we'll see. Oh side note I finally ordered the touchscreen watch display yesterday, so it should be here in a few days, and once it arrives I'll have all the components to start building the body (I think), stay tuned!
