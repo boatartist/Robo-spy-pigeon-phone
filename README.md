@@ -124,3 +124,19 @@ I was pretty rushed when I posted that article yesterday, I hadn't done much and
 ... Actually, maybe not, looks like the website is kind of janky and it doesn't want me to steal from it, or maybe I'm just bad at requests and Beautiful Soup, we'll see. Oh side note I finally ordered the touchscreen watch display yesterday, so it should be here in a few days, and once it arrives I'll have all the components to start building the body (I think), stay tuned!
 
 EDIT: I must apologise to everyone I have mislead in my claims that I was using a singing card's speaker, that **was** the speaker I experimented with, the one I'm currently using comes from a build-a-bear. I found the official product names for both (the singing card speaker is more or less [COM-15350](https://www.melopero.com/en/shop/sensors/audio/thinspeaker0dot5w/) and the build-a-bear speaker is probably [13ry328qf203](https://www.amazon.com.au/Aexit-Electroacoustic-External-13ry328qf203-Loudspeaker/dp/B07BDPJTB2)), as they seem like good options until I find a real product, but I will be using the measurements for the build-a-bear speaker in my CAD modeling.
+
+## June 7, 2024
+I was fooling around with my tts function and the audio randomly stopped working, which prompted me to have a small mental breakdown and also transfer my speaker to the GPIO pins, adding 
+```dtoverlay=pwm,pin=13,func=4``` to the bottom of `/boot/config.txt`. In the end the actual problem was that raspi-config sometimes likes to have little menty-B's and change pretty standard settings, so I had to go into the system settings and [change the output back to jack](https://www.raspberrypi.com/documentation/computers/configuration.html#audio-2:~:text=passphrase%22%200%200-,Audio,-Specify%20the%20audio). Well that's good to know I guess, and it looks pretty cool and saves needing external batteries, so I'm (kinda) glad it happened. 
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/21720103-b9aa-44c0-8042-e7db532cf4d5)
+
+In other news I spent way too long being bad at try-except statements and kept getting confused when raising an error caused an error to show up, but in the end I made a quick function to check for internet connection, which will be useful to switch between voices (gTTS is sooooo much better than pyttsx3, but it needs interwebs), or just to prevent errors when looking for texts or other web-based things. 
+```import requests
+try:
+  req = requests.get('https://github.com/boatartist') #shameless self-promo
+except:
+  print('Uh oh no interwebs')
+  #do something else here
+```
+Lastly, I was annotating and collating notes from the demo python code for my round display which is coming tmw (probably), I might put up those notes in future.
