@@ -71,6 +71,10 @@ try:
   #reset the image by filling it all with white
   draw.rectangle((0, 0, 240, 240), fill='WHITE', outline=None, width=1)
   disp.ShowImage(image)
+
+  #the drawing will be clearer if we do lines instead of individual pixels, so we'll need to store the previous coordinates as well as the current ones
+  prev_x = 0
+  prev_y = 0
   
   #I'm going to loop for 100 seconds or 100,000 miliseconds, but this might as well be an infinite loop
   for _ in range(100000):
@@ -78,7 +82,8 @@ try:
     if touch.X_point != 0:
       x = touch.X_point
       y = touch.Y_point
-      draw.rectangle((x, y, x+2, y+2), fill=colour, outline=None, width=1) #draw a pixel wherever the user presses
+      draw.line((prev_x, prev_y, x, y), fill=colour, width=1) #draw a line between the current and previous point
+      prev_x, prev_y = x, y #update these values
     disp.ShowImage(image)
     time.sleep(0.001) #sleep for 1 milisecond
 
