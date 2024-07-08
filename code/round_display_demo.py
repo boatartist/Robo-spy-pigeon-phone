@@ -42,7 +42,7 @@ try:
   draw = ImageDraw.Draw(image)
   
   Mode = 0 # I know we already did this, but what if we forgot? better safe than sorry
-  touch.set_Mode(Mode) #we're in gesture mode now
+  touch.Set_Mode(Mode) #we're in gesture mode now
   
   #24 was the smaller font size used in the example, the other one was 35, if that's useful
   Font = ImageFont.truetype('lib/Font00.ttf', 24) #this will cause an error if you run it unless you've put a font file from the demo into the 'lib' folder we copied over, or use another font
@@ -64,7 +64,7 @@ try:
   
   #now for the coordinates mode
   Mode = 1
-  touch.set_Mode(Mode)
+  touch.Set_Mode(Mode)
   
   #setup the colour we're drawing with
   colour = 'RED'
