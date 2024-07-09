@@ -1,5 +1,4 @@
 import time
-import spidev as SPI
 from PIL import Image, ImageDraw, ImageFont
 from lib import LCD_1inch28, Touch_1inch28
 
