@@ -70,7 +70,7 @@ Welcome to the total of 2 people I shared the link to this with, here's the thin
 
 ## June 25, 2024
 I'm away from the Raspberry Pi rn so I can't test this code, but I've been researching text-to-speech (tts) modules that I can use, because a big feature of the bird is that it's going to give audio notifications and users will be able to converse with the robot instead of just using the screen.
-***!Todo, upload brainstorming of keyboard functionality***
+![WIN_20240709_15_02_11_Scan](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/8bc84b66-6336-4831-8bcd-da5deb878636)
 After much consideration, I've decided to use the Google tts API (gTTS), following [this Geeks for Geeks article](https://www.geeksforgeeks.org/convert-text-speech-python/) because I'm lazy and it looks easy, but also it's really well documented and I can also use the google speech-to-text API so it will look symmetrical in my brain. According to the tutorial, this is the python code I'm going to need:
 ```
 from gtts import gTTS
