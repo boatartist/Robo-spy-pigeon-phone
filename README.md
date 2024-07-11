@@ -151,6 +151,15 @@ I *think* that I've finally gotten to the bottom of the stupid audio error, whic
 
 In other news my round display is working great, I made a class for it so I didn't have separate touch, display, image and draw objects, I'll post that in the code folder. At the moment I'm working on making a menu that shouts at you but doesn't keep shouting (I don't know why it won't shut up 🫠), but at least we're going somewhere. I also found that there are lots of pretty colours, because PIL uses the html colour list, which is very expansive and a great opportunity for me to demonstrate my lack of graphic design skills, yay!
 Here are some photos from my experimentation:
+
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/c50826b6-b19e-4c51-af32-56459de858f7)
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/7bf2ec96-256e-4c73-8f3f-868e46f6befe)
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/edaaab23-14eb-4984-afe0-a2a5233fe968)
+
+## July 11, 2024
+Yesterday my brain said: "Do some CAD modeling", so I did that even though I didn't have a mouse or any plans, leading to the jankiest prototype ever, but I've got a mouse-adaptor now so I'm going to fix it, but for now I'll put up all the files in a folder:
+
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/9fa8c14b-bf77-4a58-954f-f5c3bb6d3c33)
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d403a580-9750-4538-9c6f-8e3b15887748)
+![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d46dd77b-5e29-4c06-9ee9-a54b2c62ee6a)
+
