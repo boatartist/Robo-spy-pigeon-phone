@@ -163,3 +163,21 @@ Yesterday my brain said: "Do some CAD modeling", so I did that even though I did
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d403a580-9750-4538-9c6f-8e3b15887748)
 ![image](https://github.com/boatartist/Robo-spy-pigeon-phone/assets/78235705/d46dd77b-5e29-4c06-9ee9-a54b2c62ee6a)
 
+## July 22, 2024
+It might be easy to think, from the fact that I haven't updated this page in 11 days, that I've been busy doing schoolwork and not procrastinating, but no that would be a mis-guided naive optimism. In fact, I told myself that I would not work on this project until I'd finished my homework, which was a sure-fire way to ensure I worked on it constantly during momentary lapses in my willpower. So, what have I achieved? 
+1. I made a blocky little case to think about positioning and hold the screen up while I messed around with some code, not sure if it was worth it but it looks cute (or it did before I melted holes in it for all the ports I forgot I needed access to).
+   ![image](https://github.com/user-attachments/assets/0a3ee5b5-53f9-4d67-b24c-f270c3054b20)
+![image](https://github.com/user-attachments/assets/05e85769-2ae9-45e5-ab12-47076824ab2f)
+
+2. The audio stopped working (again) and I realised that, although using the GPIO pins is very convenient, it only produces square wave digital outputs, which is a bit too janky, so I reverted to using the 3.5mm jack, which is a bit annoying but it does link to my next point
+3. I thought a **lot** about how the user could change between audio output modes, experimenting (unsuccessfully) with having a bluetooth mode, which I might come back to later, but in the end I came up with a decent solution, which basically has a socket into which you can plug in wired headphones at any time, they don't turn off, and also a switch/settings option to turn off the built-in speaker by way of a GPIO pin which provides power through my fun transistor solution from earlier.
+4. So obviously that meant that I bought a 3.5 mm socket, a usb socket, a couple of switches, and a prototyping solderable board. That last part is the most useful, as it lets me combine all the components, and it was also incredibly convenient because I put all the pins from the display in a line, so I no longer have to worry about the fiddly order every time.
+![image](https://github.com/user-attachments/assets/a1c334ac-8015-433a-af90-0bcc50f93ab6)
+
+I think I messed up the speaker somehow, might be the transistor, but it's looking better already.
+![WIN_20240722_13_20_55_Pro](https://github.com/user-attachments/assets/256ab43f-c27b-4d69-9352-05340205c2cf)
+![WIN_20240722_13_20_48_Pro](https://github.com/user-attachments/assets/61d31eab-b3e9-461c-9238-fd0eaf398bc4)
+
+Once I've fixed the built-in speaker I'm going to install the sockets and switches, which will be able to be moved to wherever I want my peripherals, I'm thinking under the wing in the final product, that would be cute. Another plan I have for the end is to get a custom PCB made, which will plug all my components in really nicely and easily, and look a big smaller and more professional, but I should probably get my prototype working first. I feel like there was some code I did, but I don't think I have any big updates.
+
+Oh, that's right, I wanted to shout out the guys at Core Electronics, the online store where I've been buying a lot of my stuff, because I sent them a really wacky and unedited email asking them whether this project might be worth getting published on their projects section one day, and they came back in a couple of days with a really helpful and encouraging email about how I could transform this blog/log thingo into a proper tutorial, which I'm really grateful for and will definitely be applying when I get around to finalising all the documentation. Thank you! :) 
