@@ -178,6 +178,21 @@ I think I messed up the speaker somehow, might be the transistor, but it's looki
 ![WIN_20240722_13_20_55_Pro](https://github.com/user-attachments/assets/256ab43f-c27b-4d69-9352-05340205c2cf)
 ![WIN_20240722_13_20_48_Pro](https://github.com/user-attachments/assets/61d31eab-b3e9-461c-9238-fd0eaf398bc4)
 
-Once I've fixed the built-in speaker I'm going to install the sockets and switches, which will be able to be moved to wherever I want my peripherals, I'm thinking under the wing in the final product, that would be cute. Another plan I have for the end is to get a custom PCB made, which will plug all my components in really nicely and easily, and look a big smaller and more professional, but I should probably get my prototype working first. I feel like there was some code I did, but I don't think I have any big updates.
+Once I've fixed the built-in speaker I'm going to install the sockets and switches, which will be able to be moved to wherever I want my peripherals, I'm thinking under the wing in the final product, that would be cute. Another plan I have for the end is to get a custom PCB made, which will plug all my components in really nicely and easily, and look a bit smaller and more professional, but I should probably get my prototype working first. I feel like there was some code I did, but I don't think I have any big updates.
 
 Oh, that's right, I wanted to shout out the guys at Core Electronics, the online store where I've been buying a lot of my stuff, because I sent them a really wacky and unedited email asking them whether this project might be worth getting published on their projects section one day, and they came back in a couple of days with a really helpful and encouraging email about how I could transform this blog/log thingo into a proper tutorial, which I'm really grateful for and will definitely be applying when I get around to finalising all the documentation. Thank you! :) 
+
+## August 4/5, 2024
+The speaker not working was apparently just because I used the wrong transistor by accident, oops. I think it would have worked if I'd turned it around, but for consistency's sake we're sticking with the BC557, which is a PNP rather than the NPN BC547 I accidentally used. So that's good news, we now have the speaker shouting at us, and it turns off when it's not, so that there's no buzzing.
+![WIN_20240804_15_00_18_Pro](https://github.com/user-attachments/assets/76a7c29f-05ef-4340-a707-e39b4ec1dabb)
+This means that I almost have enough functionality to mock up another prototype, but I might quickly solder my sockets first, and put in some header pins for servos. I am a little worried because I only have about 3 GPIO pins, since the prototyping board only includes the first half of the pins, but I think this should be enough to do claw movement and maybe head rotation, which is quite exciting. 
+
+Things I need to fix/do (as of my brain rn):
+- solder all sockets (3.5mm audio and usb input, maybe hdmi at a later date)
+- stop the screen from freaking out and thinking that I'm infinitely pressing wherever I last pressed, I just want to press once and then it stops
+- get a useable requests interaction with the modem's webpage, so that I can send and receive texts without using minicom, since the fancy modem is based on windows software. (alternatively I could invest in a less sophisticated/linux compatible modem that does use minicom)
+- look at making a pcb/getting a new and bigger prototyping board
+- figure out camera -> display live streaming, this should be possible but it doesn't seem to like it
+- consider balance, weight and how complex the design should be, so that I stop wasting filament and am more consistent with my design
+- possibly remarket the pigeon as a galah, because they're much prettier, their heads are bigger and closer to their bodies, and if I sell them in Australia one day I can frame it as a limited edition native birds line
+- start documenting this project properly before it gets too chaotic (I probably won't do this tbh)
