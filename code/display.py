@@ -1,4 +1,5 @@
 import time
+import spidev as SPI
 from PIL import Image, ImageDraw, ImageFont
 from lib import LCD_1inch28, Touch_1inch28
 
@@ -47,3 +48,39 @@ class Display:
         if file_name:
             self.image = Image.open(file_name)
             self.draw = ImageDraw.Draw(self.image)
+            
+    def main_menu(self):
+        self.fill_colour(colour='WHITE')
+        self.rectangle(coordinates=(0, 0, 120, 120), fill='crimson')
+        self.rectangle(coordinates=(121, 0, 240, 120), fill='cornflowerblue')
+        self.rectangle(coordinates=(0, 121, 120, 240), fill='forestgreen')
+        self.rectangle(coordinates=(121, 121, 240, 240), fill='gold')
+        self.line(start=(120, 0), end=(120, 240), width=4)
+        self.line(start=(0, 120), end=(240, 120), width=4)
+        self.write(text='Camera', coordinates=(4, 122))
+        self.write(text='SMS', coordinates=(128, 122))
+        self.write(text='Settings', coordinates=(128, 84))
+        self.write(text='Notes', coordinates=(4, 84))
+        
+    def settings(self, wifi_mode='sim', speaking=True, speaker=True):
+        self.fill_colour(colour='red')
+        modes = ['wifi', 'sim', 'none']
+        wifi_colours = ['green', 'blue', 'gray']
+        wifi_colour = wifi_colours[modes.index(wifi_mode)]
+        self.rectangle(coordinates=(0, 0, 120, 120), fill=wifi_colour)
+        self.rectangle(coordinates=(121, 0, 240, 120), fill='yellow')
+        self.rectangle(coordinates=(0, 121, 120, 240), fill='purple')
+        self.line(start=(120, 0), end=(120, 240), width=4)
+        self.line(start=(0, 120), end=(240, 120), width=4)
+        self.write(text='Wifi mode', coordinates=(4, 56))
+        self.write(text=wifi_mode, coordinates=(4, 84))
+        self.write(text='Speaking', coordinates=(128, 56))
+        self.write(text='on' if speaking else 'off', coordinates=(128, 84))
+        self.write(text='Speaker', coordinates=(4, 122))
+        self.write(text='on' if speaker else 'off', coordinates=(12, 148))
+        self.write(text='Exit', coordinates=(128, 122))
+
+'''
+d = Display()
+d.settings()
+d.update()'''
