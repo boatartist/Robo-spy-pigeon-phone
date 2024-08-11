@@ -3,10 +3,13 @@ import display
 from check_for_internet import *
 import time
 from wifi import *
+from picamera import PiCamera
+from io import BytesIO
+from PIL import Image, ImageDraw
 
 class Bird:
     wifi_modes = ['wifi', 'sim', 'none']
-    non_existent_modes = ['texts', 'notes', 'camera']
+    non_existent_modes = ['texts', 'notes']
     def __init__(self):
         self.Display = display.Display()
         self.Display.switch_mode(1)
@@ -21,6 +24,10 @@ class Bird:
         self.prev_x, self.prev_y = 0, 0
         self.x, self.y = 0, 0
         self.has_new_input = False
+        self.camera = PiCamera()
+        self.camera.resolution = (240, 240)
+        self.camera_stream = BytesIO()
+        self.is_streaming = False
         
     def main_menu(self):
         self.Display.main_menu()
@@ -67,6 +74,24 @@ class Bird:
             else:
                 self.mode = None
                 self.in_menu = True
+
+    def camera_app(self):
+        if not self.is_streaming:
+            self.camera.start_preview()
+            self.is_streaming = True
+        self.camera_stream = BytesIO()
+        self.camera.capture(self.camera_stream, format='jpeg')
+        self.camera_stream.seek(0)
+        img = Image.open(self.camera_stream)
+        self.Display.camera_stream(img)
+        if self.has_new_input:
+            self.camera.capture('final.jpg')
+            self.camera.stop_preview()
+            self.is_streaming = False
+            self.mode = None
+            self.in_menu = True
+            self.Display.image = Image.new('RGB', (240, 240), 'WHITE')
+            self.Display.draw = ImageDraw.Draw(self.Display.image)
     
     def update(self):
         self.has_new_input = True
@@ -81,6 +106,8 @@ class Bird:
         elif self.mode and not self.mode in Bird.non_existent_modes:
             if self.mode == 'settings':
                 self.settings()
+            elif self.mode == 'camera':
+                self.camera_app()
         else:
             self.mode = None
             self.in_menu = True
