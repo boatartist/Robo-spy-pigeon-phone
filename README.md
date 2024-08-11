@@ -196,3 +196,10 @@ Things I need to fix/do (as of my brain rn):
 - consider balance, weight and how complex the design should be, so that I stop wasting filament and am more consistent with my design
 - possibly remarket the pigeon as a galah, because they're much prettier, their heads are bigger and closer to their bodies, and if I sell them in Australia one day I can frame it as a limited edition native birds line
 - start documenting this project properly before it gets too chaotic (I probably won't do this tbh)
+
+## August 11, 2024
+I figured out how to stop the display taking infinite input, by reasoning that it probably wasn't a problem unique to my project, and that it likely just doesn't reset to 0,0 ever, despite my best hopes. Basically, when you press the display once, it reads that and keeps outputting it forever, or until there's a new input. To counter that I kept track of the previous input and have a flag which says if there's been any new input to worry about.
+
+With this problem under control, I optimised (slightly) my code and put it in a class, I'll replace previous code uploads with the working current files, you can turn the speaker on or off, change the wifi mode, and listen to the speaker scream at you if you press any function which isn't active yet, I'm pretty impressed with myself. `bird.py` is the main file, and it imports all the other modules including `offline_tts`, `display`, `wifi` and `check_for_internet`. Remember that display also imports the display's module, so if anyone is running this and getting errors, it's probably that. At some later date I'll look into how requirements.txt files work, because there are a lot of random modules to import, and if anyone is ever copying this project I don't want them to have to debug everything line by line. 
+
+I still don't have a plan for the modem, I think I might have to put my issue on stack overflow, but that's definitely a last resort. In the meantime, I'll keep weighing up the value of just getting a software-less modem, while tackling the issue of the camera, stay tuned!
