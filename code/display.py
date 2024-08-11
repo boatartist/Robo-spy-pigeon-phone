@@ -80,6 +80,10 @@ class Display:
         self.write(text='on' if speaker else 'off', coordinates=(12, 148))
         self.write(text='Exit', coordinates=(128, 122))
 
+    def camera_stream(self, img):
+        self.image = img
+        self.draw = ImageDraw.Draw(self.iamge)
+
 '''
 d = Display()
 d.settings()
