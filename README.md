@@ -205,3 +205,11 @@ With this problem under control, I optimised (slightly) my code and put it in a 
 I also implemented the camera app, apparently the only thing I needed to change was refreshing the stream every time, but it now works, showing an only slightly laggy feed from the camera, which saves to `final.jpg` on the Desktop (or wherever the main file is) when you click the screen, I'm pretty happy with it. :)
 
 I still don't have a plan for the modem, I think I might have to put my issue on stack overflow, but that's definitely a last resort. In the meantime, I'll keep weighing up the value of just getting a software-less modem, stay tuned!
+
+## August 13, 2024
+I am incredibly excited rn, because I showed this project to my awesome friend Darcy a little while back, and she's offered, with all her amazing DT, CAD and Blender skills, to design all the cases for my newly rebranded galah, because she actually knows how to make it look incredible. I'm going to have to give her all the specs, but she's already mocked up a ✨stunning✨ aesthetic prototype, look at it!!! I'll put all the screenshots/renders she sent me in a folder, but here are some of the highlights :)
+![Birb1angle](https://github.com/user-attachments/assets/b7f88fb3-f10a-4a90-bc71-5ee1bee42aa4)
+![Birb1front](https://github.com/user-attachments/assets/30507e70-481e-40ce-8741-940aebb462b8)
+![birbflat1](https://github.com/user-attachments/assets/24cd2deb-1348-4c55-9913-7da4cebd6e3b)
+![birbodyholetopflat1](https://github.com/user-attachments/assets/0df2118a-491c-4d63-afc0-be1e00966ccc)
+![birhed1](https://github.com/user-attachments/assets/d5975ba8-9161-4930-a7dc-410b8a750863)
