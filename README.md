@@ -213,3 +213,7 @@ I am incredibly excited rn, because I showed this project to my awesome friend D
 ![birbflat1](https://github.com/user-attachments/assets/24cd2deb-1348-4c55-9913-7da4cebd6e3b)
 ![birbodyholetopflat1](https://github.com/user-attachments/assets/0df2118a-491c-4d63-afc0-be1e00966ccc)
 ![birhed1](https://github.com/user-attachments/assets/d5975ba8-9161-4930-a7dc-410b8a750863)
+
+EDIT:
+
+Stack Overflow is the best thing ever and I may have solved all of my modem problems. Literally, I posted [a question](https://stackoverflow.com/questions/78864009/is-there-a-way-to-access-the-sms-capabilities-and-modem-webpage-of-a-usb-4g-mode) and mere minutes later a response from a bored computer scientist popped up, suggesting that I use Selenium to dynamically load the webpage, which I think might be exactly what I needed, so good!
