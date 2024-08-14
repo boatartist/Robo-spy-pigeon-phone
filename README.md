@@ -217,3 +217,20 @@ I am incredibly excited rn, because I showed this project to my awesome friend D
 EDIT:
 
 Stack Overflow is the best thing ever and I may have solved all of my modem problems. Literally, I posted [a question](https://stackoverflow.com/questions/78864009/is-there-a-way-to-access-the-sms-capabilities-and-modem-webpage-of-a-usb-4g-mode) and mere minutes later a response from a bored computer scientist popped up, suggesting that I use Selenium to dynamically load the webpage, which I think might be exactly what I needed, so good!
+
+## August 14, 2024
+Heh heh heh, it's 9pm on a school night and I only just managed to install all the correct drivers for selenium, but (I think) it's finally ready to actually use, yay! I spent just a little itsy bit of time crying dejectedly when the raspberry pi was being a stupid little child and not being okay with any of the normal procedures, but after searching up something along the lines of 'How to Selenium Raspberry Pi Python beginners easy guide diy step by step someone else do it for me' I *finally* found [a useful tutorial](https://patrikmojzis.medium.com/how-to-run-selenium-using-python-on-raspberry-pi-d3fe058f011). No well actually it was [the link in the comment on that tutorial](https://ivanderevianko.com/2020/01/selenium-chromedriver-for-raspberrypi) which solved my problem but whatever. If anyone wants to know how to install selenium and all it's required drivers, here's what I've learnt (against my will), as a quick 2-step method.
+
+Step 1: Install the actual Selenium module: `pip3 install Selenium`
+
+Step 1.1: Doubt yourself when this doesn't immediately work and install all sorts of different versions, only to realise that this was not at all the problem
+
+Step 2: Try to install all manner of legitimate Firefox and Chrome drivers
+
+Step 2.1: Get desperate and try illegitimate and vaguely sketchy installation methods for said drivers, looking for the right version which matches the version of your browser (you can find what this should be with `chromium-browser --version`)
+
+Step 2.2: Find a more genuine way and finally get the right driver which magically has the correct version and you didn't need to scroll through 50 pages of releases `sudo apt-get install chromium-chromedriver`
+
+Step 3 (extra fun bonus): Use `chromedriver --version` to check that you've got it right all in one and try to push back exhausted tears as you rush to document this because otherwise it's bound to get lost and have to be re-done. Yippee! 🙃✨❤️ 
+
+While I was being optimistic and hadn't tested for base functionality I started coding a function to log into and retrieve data from the website, so I might be able to finish it tmw and implement it slightly, but it's 9.25, I should probs go to bed now.
