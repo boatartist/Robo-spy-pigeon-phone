@@ -234,3 +234,82 @@ Step 2.2: Find a more genuine way and finally get the right driver which magical
 Step 3 (extra fun bonus): Use `chromedriver --version` to check that you've got it right all in one and try to push back exhausted tears as you rush to document this because otherwise it's bound to get lost and have to be re-done. Yippee! 🙃✨❤️ 
 
 While I was being optimistic and hadn't tested for base functionality I started coding a function to log into and retrieve data from the website, so I might be able to finish it tmw and implement it slightly, but it's 9.25, I should probs go to bed now.
+
+## August 15, 2024
+So, even though Selenium and I are besties now, the telstra webdesign people are my opps, with their user-friendly complex html layouts, unbelievable, smh. I would like to introduce these people to high school students and the level of complexity that there is not in any of my html endeavours, but I guess I'll just have to deal with it. It is going relatively well tho, and for paranoia about losing files sake I'm gonna paste the dodgy thing I've got here: 
+```
+#password input: id=txtPwd, password = Admin
+#login button: id=btnLogin
+#each text conversation on the main page's id starts with smslist-item- then a long number
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+import time
+
+print('installed the things')
+#driver = webdriver.Chrome(ChromeDriverManager().install())
+#driver = webdriver.Chrome('/usr/bin/chromedriver')
+driver = webdriver.Chrome()
+print('driver exists')
+driver.get('http://192.168.0.1/index.html')
+print('got a webpage')
+try:
+    login = driver.find_element(By.ID, 'txtPwd')
+    login.clear()
+    login.send_keys('Admin')
+    login_button = driver.find_element(By.ID, 'btnLogin')
+    login_button.click()
+except:
+    pass
+while True:
+    try:
+        sms_link = driver.find_element(By.LINK_TEXT, 'SMS')
+        sms_link.click()
+        break
+    except:
+        pass
+try:
+    right_sms_mode = driver.find_element(By.LINK_TEXT, 'Device SMS')
+    right_sms_mode.click()
+except:
+    pass
+while True:
+    try:
+        new_sms_button = driver.find_element(By.ID, 'smslist-new-sms')
+        new_sms_button.click()
+        break
+    except:
+        pass
+while True:
+    try:
+        contact_input = driver.find_element(By.ID, 'chosenUserSelect_chzn')
+        contact_input.click()
+        break
+    except:
+        pass
+contact_select = driver.find_element(By.CLASS_NAME, 'chzn-results')
+contacts = {}
+try:
+    for i in range(59):
+        person = driver.find_element(By.ID, f'chosenUserSelect_chzn_o_{i}')
+        name = person.get_attribute('value')
+        contacts[name] = f'chosenUserSelect_chzn_o_{i}'
+except:
+    pass
+for name in contacts:
+    print(name)
+contact = input('Contact: ')
+contact_input = driver.find_element(By.ID, 'chosen-search-field-input')
+contact_input.send_keys(contact + Keys.RETURN)
+message = input('Message: ')
+text_input = driver.find_element(By.ID, 'chat-input')
+text_input.send_keys(message)
+send_message = driver.find_element(By.ID, 'btn-send')
+send_message.click()
+time.sleep(60)
+driver.close()
+```
+
+So ja, it's a bit special and sometimes it lags a whole bunch so I have to implement dodgy loops, but this code *mostly* works, except for some reason the contacts don't like me and that's still broken, but I can navigate to the texts page and try to send a message, just to nobody. So yay! 
+
+Oh and I also remembered, I'm gonna take my setup to school tmw and Darcy might have a look at measuring and designing stuff (maybe). 
