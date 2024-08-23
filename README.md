@@ -313,3 +313,29 @@ driver.close()
 So ja, it's a bit special and sometimes it lags a whole bunch so I have to implement dodgy loops, but this code *mostly* works, except for some reason the contacts don't like me and that's still broken, but I can navigate to the texts page and try to send a message, just to nobody. So yay! 
 
 Oh and I also remembered, I'm gonna take my setup to school tmw and Darcy might have a look at measuring and designing stuff (maybe). 
+
+## August 23, 2024
+I bought [a super cheap usb microphone from officeworks](https://www.officeworks.com.au/shop/officeworks/p/otto-usb-c-wired-lapel-microphone-otcck15lm) to look at getting speech-to-text, and I can now record audio and interpret it using the speech-recognition module and google speech recognition. However, I didn't have much luck with the module's built-in microphone, and I don't want to have to rely on an internet connection to be able to talk to the robot. So then I messed around with mozilla deepspeech and sopare, and neither of those were very good either. I was just about to give up when I found [vosk](https://alphacephei.com/vosk/), which is a miracle and now I have speech to text:
+```
+import os
+import time
+def get_audio(length=5):
+  os.system('arecord --device=hw:2,0 --format S16_LE --rate 48000 --duration={length} test.wav')
+  print('got audio')
+
+def translate():
+  try:
+    os.system('vosk-transcriber -i test.wav -o test.txt')
+    f = open('test.txt', 'r').read().strip('/n')
+    return f
+  except:
+    print('error')
+    return None
+
+while True:
+  input()
+  get_audio()
+  time.sleep(2)
+  translate()
+```
+This isn't implemented yet because I'm not really sure what the best way to record the audio is, whether I can tie it to a button being held down or record for a set time after recording, or whether it's best to listen all the time. Not hugely keen on the last two, but we'll have to see what I dig up. My solution is also quite file-heavy, but I think it should be possible to bypass the audio file like with the tts, we'll see.
