@@ -339,3 +339,10 @@ while True:
   translate()
 ```
 This isn't implemented yet because I'm not really sure what the best way to record the audio is, whether I can tie it to a button being held down or record for a set time after recording, or whether it's best to listen all the time. Not hugely keen on the last two, but we'll have to see what I dig up. My solution is also quite file-heavy, but I think it should be possible to bypass the audio file like with the tts, we'll see.
+
+## August 24, 2024
+I finally got around to changing the settings page to include an internet status and abandoned the idea that you might plug in headphones to a literal bird. I also made a very janky little interface for the notes app where you can speak for 5 seconds and get some text saved to a file, just as a proof of concept really, it's not very useful rn. But I'm feeling very happy that I unlocked another feature, even if it isn't perfect. The stt functions and updated code have been uploaded, and I also uploaded a requirements.txt file. I found a geeks for geeks article which had an automated function to create one, so this is just what it spat out from the folder of all of my code, but this doesn't include command line modules that I access through the os module, and assumes that you run all the code as it exists in the code folder on this github, including having the display functions in the lib folder, so I'll see how I can improve it to make it more useful later on. Anyway, here's some photos of the most recent interfaces (I think I wasn't close enough to the mic, it doesn't seem to have picked up my 'hello this is some test audio' very well but at least it got something) :
+
+![image](https://github.com/user-attachments/assets/c4e9a320-dab3-40a0-9b85-969b4c9a1e98)
+
+![image](https://github.com/user-attachments/assets/a9ea3743-135b-4b29-bf38-5c40de9f6e8a)
