@@ -62,7 +62,7 @@ class Display:
         self.write(text='Settings', coordinates=(128, 84))
         self.write(text='Notes', coordinates=(4, 84))
         
-    def settings(self, wifi_mode='sim', speaking=True, speaker=True):
+    def settings(self, wifi_mode='sim', has_internet=True, speaker=True):
         self.fill_colour(colour='red')
         modes = ['wifi', 'sim', 'none']
         wifi_colours = ['green', 'blue', 'gray']
@@ -74,16 +74,35 @@ class Display:
         self.line(start=(0, 120), end=(240, 120), width=4)
         self.write(text='Wifi mode', coordinates=(4, 56))
         self.write(text=wifi_mode, coordinates=(4, 84))
-        self.write(text='Speaking', coordinates=(128, 56))
-        self.write(text='on' if speaking else 'off', coordinates=(128, 84))
+        self.write(text='Interwebs?', coordinates=(128, 56))
+        self.write(text='yes' if has_internet else 'no', coordinates=(128, 84))
         self.write(text='Speaker', coordinates=(4, 122))
         self.write(text='on' if speaker else 'off', coordinates=(12, 148))
         self.write(text='Exit', coordinates=(128, 122))
-
+        
     def camera_stream(self, img):
         self.image = img
-        self.draw = ImageDraw.Draw(self.iamge)
-
+        self.draw = ImageDraw.Draw(self.image)
+        
+    def notes(self, lines=[]):
+        self.fill_colour(colour='white')
+        for i in range(len(lines)):
+            y = i*24+24
+            self.write(text=lines[i], coordinates=(30, y))
+        self.rectangle(coordinates=(0, 0, 24, 240), fill='red')
+        self.rectangle(coordinates=(0, 216, 240, 240), fill='green')
+        self.rectangle(coordinates=(216, 0, 240, 240), fill='blue')
+        self.write(text='save', coordinates=(80, 210))
+        
+        self.write(text='e', coordinates=(4, 64))
+        self.write(text='x', coordinates=(4, 88))
+        self.write(text='i', coordinates=(4, 112))
+        self.write(text='t', coordinates=(4, 136))
+        
+        self.write(text='n', coordinates=(216, 64))
+        self.write(text='e', coordinates=(216, 88))
+        self.write(text='w', coordinates=(216, 112))
+        
 '''
 d = Display()
 d.settings()
