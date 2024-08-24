@@ -3,13 +3,14 @@ import display
 from check_for_internet import *
 import time
 from wifi import *
+from stt import get_speech
 from picamera import PiCamera
 from io import BytesIO
 from PIL import Image, ImageDraw
 
 class Bird:
     wifi_modes = ['wifi', 'sim', 'none']
-    non_existent_modes = ['texts', 'notes']
+    non_existent_modes = ['texts']
     def __init__(self):
         self.Display = display.Display()
         self.Display.switch_mode(1)
@@ -17,7 +18,7 @@ class Bird:
         self.in_menu = True
         self.mode = None
         self.speaker = True
-        self.speaking = True
+        self.has_internet = check_for_internet()
         self.wifi_mode = 'wifi'
         modem_off()
         wifi_on()
@@ -28,6 +29,7 @@ class Bird:
         self.camera.resolution = (240, 240)
         self.camera_stream = BytesIO()
         self.is_streaming = False
+        self.note = []
         
     def main_menu(self):
         self.Display.main_menu()
@@ -37,11 +39,13 @@ class Bird:
                 offline_tts.speak('Notes', self.speaker)
                 self.in_menu = False
                 self.mode = 'notes'
+                self.note = []
             elif self.x > 120 and self.y < 120:
                 print('settings')
                 offline_tts.speak('Settings', self.speaker)
                 self.in_menu = False
                 self.mode = 'settings'
+                self.has_internet = check_for_internet()
             elif self.x < 120 and self.y > 120:
                 print('camera')
                 offline_tts.speak('Camera', self.speaker)
@@ -54,7 +58,7 @@ class Bird:
                 self.mode = 'texts'
     
     def settings(self):
-        self.Display.settings(self.wifi_mode, self.speaking, self.speaker)
+        self.Display.settings(self.wifi_mode, self.has_internet, self.speaker)
         if self.has_new_input:
             if self.x < 120 and self.y < 120:
                 self.wifi_mode = Bird.wifi_modes[(Bird.wifi_modes.index(self.wifi_mode)+1)%3]
@@ -68,13 +72,13 @@ class Bird:
                     wifi_off()
                     modem_off()
             elif self.x > 120 and self.y < 120:
-                self.speaking = not self.speaking
+                pass
             elif self.x < 120 and self.y > 120:
                 self.speaker = not self.speaker
             else:
                 self.mode = None
                 self.in_menu = True
-
+    
     def camera_app(self):
         if not self.is_streaming:
             self.camera.start_preview()
@@ -93,6 +97,21 @@ class Bird:
             self.Display.image = Image.new('RGB', (240, 240), 'WHITE')
             self.Display.draw = ImageDraw.Draw(self.Display.image)
     
+    def notes(self):
+        self.Display.notes(self.note)
+        if self.has_new_input:
+            if self.x <= 24:
+                self.mode = None
+                self.in_menu = True
+                self.note = []
+            elif self.x >= 216:
+                text = get_speech()
+                length = 16
+                self.note = [text[0+i:length+i] for i in range(0, len(text), length)]
+            elif self.y >= 216:
+                with open('note.txt', 'a') as f:
+                    f.write(''.join(self.note))
+    
     def update(self):
         self.has_new_input = True
         self.x, self.y = self.Display.get_input()
@@ -108,6 +127,8 @@ class Bird:
                 self.settings()
             elif self.mode == 'camera':
                 self.camera_app()
+            elif self.mode == 'notes':
+                self.notes()
         else:
             self.mode = None
             self.in_menu = True
