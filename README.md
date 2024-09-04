@@ -346,3 +346,16 @@ I finally got around to changing the settings page to include an internet status
 ![image](https://github.com/user-attachments/assets/c4e9a320-dab3-40a0-9b85-969b4c9a1e98)
 
 ![image](https://github.com/user-attachments/assets/a9ea3743-135b-4b29-bf38-5c40de9f6e8a)
+
+## September 04, 2024
+I've spent a *lot* of time recently researching power methods, because it occured to me that this is going to need to be wireless, and the shape of the thomas the tank engine battery pack we found in the park isn't going to cut it. 
+
+![image](https://github.com/user-attachments/assets/d62f30d5-61ed-4688-879b-dd00feb6c201)
+
+So I need to make my own battery charger circuit. There are heaps of boards online, and my only requirements are that they supply at least 5V and 2.5A, and have sockets for charging and powering the pi. [This one from Core Electronics](https://core-electronics.com.au/mp2636-power-booster-charger-module.html) looks pretty good, but I'm not 100% sure if that's the best option. If I get that board or similar, I can use a few rechargeable Li-ion batteries from my local Jaycar, but I can also get some online if there's a different shape I need. 
+
+Another option, which seems just an itsy bit dodgy is to use this board I stole from an old drone:
+
+![image](https://github.com/user-attachments/assets/a14671ae-3802-42be-8c1c-ae18017ea062)
+
+It's super tiny, which is great, but I have no idea if it will work or just catch on fire. At any rate I'd have to botch together a supicious cable for powering the Pi. Also, I just read the specs from the battery casing (I had to bin the original battery because it was on the brink of explosion), and it says that it outputted 3.7V and 600mAh. Sooooo, that's probably not enough, but a fun idea nonetheless. I will continue looking for stingy ways to make this powerbank, and I also realised that I have no sort of tilt sensors, so I'll look for some of those at the same time. Finally, I want some smaller servos, so I'm going to hunt down a hobby/rc store and find some. 
