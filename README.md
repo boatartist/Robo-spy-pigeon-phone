@@ -359,3 +359,20 @@ Another option, which seems just an itsy bit dodgy is to use this board I stole 
 ![image](https://github.com/user-attachments/assets/a14671ae-3802-42be-8c1c-ae18017ea062)
 
 It's super tiny, which is great, but I have no idea if it will work or just catch on fire. At any rate I'd have to botch together a supicious cable for powering the Pi. Also, I just read the specs from the battery casing (I had to bin the original battery because it was on the brink of explosion), and it says that it outputted 3.7V and 600mAh. Sooooo, that's probably not enough, but a fun idea nonetheless. I will continue looking for stingy ways to make this powerbank, and I also realised that I have no sort of tilt sensors, so I'll look for some of those at the same time. Finally, I want some smaller servos, so I'm going to hunt down a hobby/rc store and find some. 
+
+## September 07, 2024
+I went to Jaycar to look for some batteries and I ended up getting [a battery charger](https://www.jaycar.com.au/duinotech-arduino-compatible-lithium-battery-usb-charger-module/p/XC4502), [a 5V output board](https://www.jaycar.com.au/duinotech-arduino-compatible-5v-dc-to-dc-converter-module/p/XC4512) as well as [a 3.7V 2600mAh Li-Ion battery](https://www.jaycar.com.au/18650-rechargeable-li-ion-battery-2600mah-3-7v-solder-tag/p/SB2313). So that's a great haul which I combined into this dodgy little circuit which hasn't fully caught on fire yet, it only smoked once when I touched both ends of the battery together through my third hand.
+
+![image](https://github.com/user-attachments/assets/6edf12cb-36e6-4829-91b6-9dd34474995b)
+
+While it is outputting the required 5V, it doesn't seem to have very much current, I managed to charge my phone by 2% over half an hour, but it didn't fully turn on the Raspberry Pi and I turned it off as it got pretty hot while charging, by attaching a random switch I had. I'll try attaching more batteries in parallel, but in the meantime I'm just keeping it away from flammable materials and searching for alternatives. 
+
+In other news, I found some coreflute my brother was hiding and I used it to make a super basic model of the galah shape so that I can do some feet later. I had lots of fun layering bits of scrap to make a round head, and I reckon it looks pretty good!
+
+![image](https://github.com/user-attachments/assets/e9fb8bb3-b6ec-4ad9-bde9-898591ed65b3)
+
+![image](https://github.com/user-attachments/assets/70eac124-ae9f-4574-ab8a-0dd9d494a47b)
+
+![image](https://github.com/user-attachments/assets/93f91c3a-e033-4e4e-9f87-25cfbea2ee98)
+
+![image](https://github.com/user-attachments/assets/d2da01e2-cfb4-4806-8e22-98439ad8817d)
