@@ -376,3 +376,10 @@ In other news, I found some coreflute my brother was hiding and I used it to mak
 ![image](https://github.com/user-attachments/assets/93f91c3a-e033-4e4e-9f87-25cfbea2ee98)
 
 ![image](https://github.com/user-attachments/assets/d2da01e2-cfb4-4806-8e22-98439ad8817d)
+
+## September 20, 2024
+Took a huge risk yesterday and edited the `/home/pi/etc/rc.local` file so that the program runs on startup, which is very stressful and last time I tried to do that my raspberry pi died and I had to create a new micro-sd card with an image and buy an sd-card adapter to remove the edit so it would turn on again. This was very traumatic, I would not recommend. But this time I spent ages debugging and ended up adding `sudo python3 /home/pi/Desktop/galah/bird.py &` to the file, and also added some absolute path references, but now it does that. 
+I also tried to improve my claw design by making it smaller so it grips smaller things, but this did not actually do anything, I think I need to add joints to the foot and make it less gear-slippy. But it looks pretty cute sitting dangerously on top of my monitor.
+
+![image](https://github.com/user-attachments/assets/2fa8368b-f718-4876-8937-394989f67156)
+![image](https://github.com/user-attachments/assets/14f86a7d-c5f4-4bac-b98a-cdb877074c21)
