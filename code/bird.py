@@ -37,18 +37,21 @@ class Bird:
         self.is_startup = True
         self.weather_info = ['No weather data', '']
         now = datetime.now()
+        self.weather_time = int(now.strftime('%H%M'))
         self.now = now.strftime("%H:%M %d/%m/%Y")
         
     def home_page(self):
         now = datetime.now()
+        current_time = int(now.strftime('%H%M'))
         self.now = now.strftime("%H:%M %d/%m/%Y")
-        if (time.time() // 10000)%100  == 0 or self.is_startup:
+        if current_time - self.weather_time >= 5 or self.is_startup:
             weather_info = weather.get_weather()
             if weather_info:
                 self.weather_info = [f'{weather_info[0]}°C', weather_info[1]]
             else:
                 self.weather_info = ['No weather data','']
             self.is_startup = False
+            self.weather_time = current_time
         self.Display.home_screen(weather_info = self.weather_info, time = self.now)
         if self.has_new_input:
             self.in_menu = True
@@ -223,17 +226,13 @@ class Bird:
                     self.draw_notes()
                 elif self.note_mode == 'view':
                     self.view_notes()
-        elif self.mode in Bird.non_existent_modes:
-            self.mode = None
-            self.in_menu = False
-            self.is_startup = True
-            
+     
         else:
             self.home_page()
         
         self.Display.update()
         self.prev_x, self.prev_y = self.x, self.y
-        time.sleep(0.01)
+        time.sleep(0.001)
 
 if __name__ == '__main__':
     bird = Bird()
