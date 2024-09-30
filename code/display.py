@@ -2,8 +2,10 @@ import time
 import spidev as SPI
 from PIL import Image, ImageDraw, ImageFont
 from lib import LCD_1inch28, Touch_1inch28
+import os
 
 class Display:
+    path = '/home/pi/Desktop/galah/'
     def __init__(self, bg_colour='WHITE', font_name='Font00', font_size=24, mode=0):
         self.mode = mode
         self.bg_colour = bg_colour
@@ -15,7 +17,7 @@ class Display:
         self.disp.clear()
         self.image = Image.new('RGB', (240, 240), bg_colour)
         self.draw = ImageDraw.Draw(self.image)
-        self.Font = ImageFont.truetype(f'lib/{font_name}.ttf', font_size)
+        self.Font = ImageFont.truetype(f'{Display.path}lib/{font_name}.ttf', font_size)
         
     def get_input(self):
         if self.mode == 1:
@@ -49,29 +51,27 @@ class Display:
             self.image = Image.open(file_name)
             self.draw = ImageDraw.Draw(self.image)
             
-    def main_menu(self):
-        self.fill_colour(colour='WHITE')
-        self.rectangle(coordinates=(0, 0, 120, 120), fill='crimson')
-        self.rectangle(coordinates=(121, 0, 240, 120), fill='cornflowerblue')
-        self.rectangle(coordinates=(0, 121, 120, 240), fill='forestgreen')
-        self.rectangle(coordinates=(121, 121, 240, 240), fill='gold')
+    def four_menu(self, colours=['crimson', 'cornflowerblue', 'forestgreen', 'gold']):
+        self.fill_colour(colour='white')
+        self.rectangle(coordinates=(0, 0, 120, 120), fill=colours[0])
+        self.rectangle(coordinates=(121, 0, 240, 120), fill=colours[1])
+        self.rectangle(coordinates=(0, 121, 120, 240), fill=colours[2])
+        self.rectangle(coordinates=(121, 121, 240, 240), fill=colours[3])
         self.line(start=(120, 0), end=(120, 240), width=4)
         self.line(start=(0, 120), end=(240, 120), width=4)
+    
+    def main_menu(self):
+        self.four_menu(colours=['crimson', 'cornflowerblue', 'forestgreen', 'gold'])
         self.write(text='Camera', coordinates=(4, 122))
         self.write(text='SMS', coordinates=(128, 122))
         self.write(text='Settings', coordinates=(128, 84))
         self.write(text='Notes', coordinates=(4, 84))
         
     def settings(self, wifi_mode='sim', has_internet=True, speaker=True):
-        self.fill_colour(colour='red')
         modes = ['wifi', 'sim', 'none']
         wifi_colours = ['green', 'blue', 'gray']
         wifi_colour = wifi_colours[modes.index(wifi_mode)]
-        self.rectangle(coordinates=(0, 0, 120, 120), fill=wifi_colour)
-        self.rectangle(coordinates=(121, 0, 240, 120), fill='yellow')
-        self.rectangle(coordinates=(0, 121, 120, 240), fill='purple')
-        self.line(start=(120, 0), end=(120, 240), width=4)
-        self.line(start=(0, 120), end=(240, 120), width=4)
+        self.four_menu(colours=[wifi_colour, 'yellow', 'purple', 'red'])
         self.write(text='Wifi mode', coordinates=(4, 56))
         self.write(text=wifi_mode, coordinates=(4, 84))
         self.write(text='Interwebs?', coordinates=(128, 56))
@@ -84,10 +84,10 @@ class Display:
         self.image = img
         self.draw = ImageDraw.Draw(self.image)
         
-    def notes(self, lines=[]):
+    def text_notes(self, lines=[]):
         self.fill_colour(colour='white')
         for i in range(len(lines)):
-            y = i*24+24
+            y = i*24+48
             self.write(text=lines[i], coordinates=(30, y))
         self.rectangle(coordinates=(0, 0, 24, 240), fill='red')
         self.rectangle(coordinates=(0, 216, 240, 240), fill='green')
@@ -103,7 +103,50 @@ class Display:
         self.write(text='e', coordinates=(216, 88))
         self.write(text='w', coordinates=(216, 112))
         
-'''
-d = Display()
-d.settings()
-d.update()'''
+    def draw_notes(self, drawing=[]):
+        self.fill_colour(colour='white')
+        self.rectangle(coordinates=(0, 0, 24, 240), fill='red')
+        self.rectangle(coordinates=(0, 216, 240, 240), fill='green')
+        self.rectangle(coordinates=(216, 0, 240, 240), fill='blue')
+        self.write(text='save', coordinates=(80, 210))
+        
+        self.write(text='e', coordinates=(4, 64))
+        self.write(text='x', coordinates=(4, 88))
+        self.write(text='i', coordinates=(4, 112))
+        self.write(text='t', coordinates=(4, 136))
+        
+        self.write(text='n', coordinates=(216, 64))
+        self.write(text='e', coordinates=(216, 88))
+        self.write(text='w', coordinates=(216, 112))
+        prev = (0, 0)
+        for pos in drawing:
+            self.line(prev, pos, 2)
+            prev = pos
+        
+    def notes_menu(self):
+        self.four_menu(colours=['white', 'green', 'blue', 'red'])
+        self.write(text='View all', coordinates=(4, 84))
+        self.write(text='Dictate', coordinates=(128, 84))
+        self.write(text='Draw', coordinates=(4, 122))
+        self.write(text='Exit', coordinates=(128, 122))
+        
+    def show_notes(self, num_imgs=0):
+        self.fill_colour('black')
+        for i in range(num_imgs):
+            img = Image.open(f'{Display.path}drawing{i}.png').resize((60, 60))
+            x = i%2 * 60
+            y = 60 + i//2*60
+            self.image.paste(img, (x, y))
+            
+    def home_screen(self, weather_info='weather', icon_url='/home/pi/Desktop/galah/current_weather.png', time='00:00'):
+        self.fill_colour('white')
+        img = Image.open(icon_url).convert('RGBA').resize((60, 60))
+        self.image.paste(img, (40, 40))
+        self.write(text=weather_info[0], coordinates=(110, 40))
+        self.write(text=weather_info[1], coordinates=(40, 100))
+        self.write(text=time, coordinates=(20, 160))
+        
+if __name__ == '__main__':
+    d = Display()
+    d.home_screen()
+    d.update()
