@@ -10,7 +10,7 @@ def get_weather(city_name='sydney'):
     x = response.json()
     if x["cod"] != "404":
         y = x["main"]
-        temperature = round(float(y["temp"])-273.15, 2)
+        temperature = round(float(y["temp"])-273.15, 0)
         z = x["weather"]
         description = z[0]["description"]
         icon_code = z[0]['icon']
@@ -23,4 +23,5 @@ def get_weather(city_name='sydney'):
     else:
         return None
     
-get_weather()
+if __name__ == '__main__':
+    get_weather()
