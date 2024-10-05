@@ -39,6 +39,10 @@ Generic LED for other eye
 
 [USB Hub](https://core-electronics.com.au/adafruit-ch334f-mini-4-port-usb-hub-breakout.html)
 
+[Accelerometer to measure tilt angle](https://core-electronics.com.au/adxl345-triple-axis-accelerometer-gy-291.html)
+
 Joystick/buttons for alternative to touch-screen control
 
-A custom PCB for all components
+Custom PCB for all components
+
+Other connectors for usb, power, and hdmi peripherals
