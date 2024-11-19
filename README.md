@@ -383,3 +383,15 @@ I also tried to improve my claw design by making it smaller so it grips smaller 
 
 ![image](https://github.com/user-attachments/assets/2fa8368b-f718-4876-8937-394989f67156)
 ![image](https://github.com/user-attachments/assets/14f86a7d-c5f4-4bac-b98a-cdb877074c21)
+
+## November 19, 2024
+Oops it's been a while since I posted. Haven't done much, I think. Actually no I did some code a while ago but I didn't get around to documenting it. I used a weather API and the datetime module to make a timed out screen. 
+![image](https://github.com/user-attachments/assets/a5f3cd5f-776d-403f-84e8-4c93ca226fdf)
+![image](https://github.com/user-attachments/assets/8231a67b-a670-48f6-9ffd-f1281c368ca1)
+All the code for that is in the files, maybe I changed something else I don't remember.
+
+More recently, I bought some armature wire and made a new wireframe of the shell, to think about scaling and stuff in a more 3D way after my coreflute adventures were a bit of a flop. I'll probably paper mache over it or something, but it's quite pretty sitting on my desk for now.
+![WIN_20241116_18_14_46_Pro](https://github.com/user-attachments/assets/3605c500-f85c-4560-ab50-0711fcbd551c)
+![WIN_20241119_19_11_23_Pro](https://github.com/user-attachments/assets/dd0840c3-5720-42c4-af3f-383d8036ec01)
+
+Note for self: researched into raspberry pi's rules about using it in product, I only need to put "Powered by Raspberry Pi" or similar on the packaging [link](https://www.raspberrypi.com/trademark-rules/#:~:text=4.%20What%20other%20restrictions%20apply%20to%20use%20of%20the%20Raspberry%20Pi%20Marks%3F), [other link, make sure to actually apply](https://www.raspberrypi.com/for-industry/powered-by/)
