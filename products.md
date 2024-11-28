@@ -46,3 +46,16 @@ Joystick/buttons for alternative to touch-screen control
 Custom PCB for all components
 
 Other connectors for usb, power, and hdmi peripherals
+
+## 29/11/2024 - researching better power options
+[nice charger](https://core-electronics.com.au/makerverse-usb-c-lipo-charger.html)
+
+[good battery maybe](https://core-electronics.com.au/polymer-lithium-ion-battery-2000mah-38459.html)
+
+[handy website](https://www.circuitbasics.com/how-to-power-your-raspberry-pi-with-a-lithium-battery/)
+
+i can probs use the dc-dc converter i already have
+
+[awesome adafruit module but why is it 40 bucks i want this but not this price, that's more than the pi zero](https://core-electronics.com.au/powerboost-1000-charger-rechargeable-5v-lipo-usb-boost-at-1a-1000c.html)
+
+[ooh this is the same but cheaper](https://core-electronics.com.au/powerboost-500-charger-rechargeable-5v-lipo-usb-boost-at-500ma.html)
