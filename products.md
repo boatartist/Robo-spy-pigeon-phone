@@ -47,6 +47,8 @@ Custom PCB for all components
 
 Other connectors for usb, power, and hdmi peripherals
 
+[When I buy the Pi Zero I will need to get GPIO audio output, and this tutorial will help me make it sound better than it does rn](https://learn.adafruit.com/introducing-the-raspberry-pi-zero/audio-outputs)
+
 ## 29/11/2024 - researching better power options
 [nice charger](https://core-electronics.com.au/makerverse-usb-c-lipo-charger.html)
 
