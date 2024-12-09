@@ -395,3 +395,10 @@ More recently, I bought some armature wire and made a new wireframe of the shell
 ![WIN_20241119_19_11_23_Pro](https://github.com/user-attachments/assets/dd0840c3-5720-42c4-af3f-383d8036ec01)
 
 Note for self: researched into raspberry pi's rules about using it in product, I only need to put "Powered by Raspberry Pi" or similar on the packaging [link](https://www.raspberrypi.com/trademark-rules/#:~:text=4.%20What%20other%20restrictions%20apply%20to%20use%20of%20the%20Raspberry%20Pi%20Marks%3F), [other link, make sure to actually apply](https://www.raspberrypi.com/for-industry/powered-by/)
+
+## December 10, 2024
+I've been doing lots of planning on the products.md file, so there are tutorials and links over there, as i'm about to order my next batch of stuff and also am going to make a pcb (i'll document it soon). [This lifesaver tutorial didn't quite fit over there but most of my planning does](https://www.instructables.com/Raspberry-PI-Multiple-I2c-Devices/). 
+
+Here's a preview of my pcb! There're probably some huge flaws, but i'm very excited already!
+
+![image](https://github.com/user-attachments/assets/b84b2465-e044-46bb-a6c4-8db5e7e98870)
