@@ -402,3 +402,10 @@ I've been doing lots of planning on the products.md file, so there are tutorials
 Here's a preview of my pcb! There're probably some huge flaws, but i'm very excited already!
 
 ![image](https://github.com/user-attachments/assets/b84b2465-e044-46bb-a6c4-8db5e7e98870)
+
+## December 12, 2024
+Past me is such a clever little cookie :) Very glad I checked my code and wiring for the speaker. Combining the resistor-capacitor circuit I found this week with the transistor circuit I had before, we now have an effective GPIO-based audio output speaker that I've (almost) integrated into the PCB. Just to remind myself, we're using GPIO 13 for the signal (`dtoverlay=pwm,pin=13,func=4` in `/boot/config.txt`), GPIO 24 for extra power and also turning the speaker off, and the wiring diagram I put in `products.md`, which I might as well copy over. Anyway, I've asked for most of the components for (and including) the new Pi for Christmas, and I'll order the PCB asap, very happy ❤️❤️.
+
+![WIN_20241212_16_03_36_Pro](https://github.com/user-attachments/assets/210d6774-622b-4759-a755-b4c212c65d6a)
+
+(NB: I need to check that all code is updated, there's probably a super efficient way for me to copy it all over from github, I don't want to take up too much processing power/memory on the Zero with finnicky things like logins).
