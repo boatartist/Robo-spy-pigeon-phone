@@ -23,5 +23,4 @@ def get_weather(city_name='sydney'):
     else:
         return None
     
-if __name__ == '__main__':
-    get_weather()
+#get_weather()
