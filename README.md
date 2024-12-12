@@ -409,3 +409,6 @@ Past me is such a clever little cookie :) Very glad I checked my code and wiring
 ![WIN_20241212_16_03_36_Pro](https://github.com/user-attachments/assets/210d6774-622b-4759-a755-b4c212c65d6a)
 
 (NB: I need to check that all code is updated, there's probably a super efficient way for me to copy it all over from github, I don't want to take up too much processing power/memory on the Zero with finnicky things like logins).
+
+
+!! Oops sorry scratch that, GPIO 24 is being used by the accelerometer, using GPIO 12 instead
