@@ -1,9 +1,14 @@
 import os
 import time
+import subprocess
 
 def get_audio(length=5):
     os.system(f'arecord --device=hw:2,0 --format S16_LE --rate 48000 --duration={length} test.wav')
-    print('got audio')
+    '''print('start')
+    recording = subprocess.Popen([f'arecord --device=hw:2,0 --format S16_LE --rate 48000 test.wav'], shell=True)
+    input()
+    recording.terminate()
+    print('finished recording')'''
 
 def translate():
     try:
@@ -22,4 +27,4 @@ def get_speech():
 
 if __name__ == '__main__':
     while True:
-        get_speech()
+        print(get_speech())
