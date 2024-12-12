@@ -2,7 +2,7 @@ from time import sleep
 import os
 from gpiozero import OutputDevice
 
-speaker = OutputDevice(24)
+speaker = OutputDevice(12)
 speaker.off()
 def speak(text='Hello World', speaker_on=True):
     if speaker_on:
