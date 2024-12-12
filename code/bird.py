@@ -9,11 +9,12 @@ from io import BytesIO
 from PIL import Image, ImageDraw
 import weather
 from datetime import datetime
+import notes
 
 class Bird:
     wifi_modes = ['wifi', 'sim', 'none']
     non_existent_modes = ['texts']
-    path = os.path.dirname(__file__) + '/'
+    path = '/home/pi/Desktop/galah/'
     def __init__(self):
         self.Display = display.Display()
         self.Display.switch_mode(1)
@@ -31,9 +32,8 @@ class Bird:
         self.camera = PiCamera()
         self.camera.resolution = (240, 240)
         self.camera_stream = BytesIO()
+        self.notes = notes.Notes()
         self.is_streaming = False
-        self.note = []
-        self.note_mode = 'menu'
         self.is_startup = True
         self.weather_info = ['No weather data', '']
         now = datetime.now()
@@ -123,84 +123,6 @@ class Bird:
             self.Display.image = Image.new('RGB', (240, 240), 'WHITE')
             self.Display.draw = ImageDraw.Draw(self.Display.image)
     
-    def note_menu(self):
-        self.Display.notes_menu()
-        if self.has_new_input:
-            if self.x < 120 and self.y < 120:
-                self.note_mode = 'view'
-            elif self.x > 120 and self.y < 120:
-                self.note_mode = 'text'
-                self.note = []
-            elif self.x < 120 and self.y > 120:
-                self.note_mode = 'draw'
-                self.drawing = []
-            else:
-                self.mode = None
-                self.in_menu = True
-    
-    def text_notes(self):
-        self.Display.text_notes(self.note)
-        if self.has_new_input:
-            if self.x <= 24:
-                self.note = []
-                self.note_mode = 'menu'
-            elif self.x >= 216:
-                self.Display.write('Transcribing...', (26, 116))
-                self.Display.update()
-                text = get_speech()
-                length = 16
-                self.note = [text[0+i:length+i] for i in range(0, len(text), length)]
-            elif self.y >= 216:
-                with open(f'{Bird.path}note.txt', 'a') as f:
-                    f.write(''.join(self.note))
-    
-    def draw_notes(self):
-        self.Display.draw_notes(self.drawing)
-        if self.has_new_input:
-            if 30 <= self.x <= 210 and 30 <= self.y <= 210:
-                self.drawing.append((self.x, self.y))
-            #exit
-            elif self.x <= 24:
-                self.drawing = []
-                self.note_mode = 'menu'
-            #new
-            elif self.x >= 216:
-                self.drawing = []
-            #save
-            elif self.y >= 216:
-                files = os.listdir()
-                nums = []
-                for i in files:
-                    if 'drawing' in i:
-                        nums.append(int(i[7]))
-                nums.sort()
-                if len(nums) == 0:
-                    num = 0
-                elif len(nums) >= 4:
-                    num = 0
-                else:
-                    num = nums[-1] + 1
-                self.Display.write(f"Saving as drawing{num}.png", (4, 120))
-                self.Display.update()
-                pic = Image.new('RGB', (240, 240), 'WHITE')
-                draw = ImageDraw.Draw(pic)
-                prev = (0, 0)
-                for pos in self.drawing:
-                    draw.line((prev, pos), width=2, fill='black')
-                    prev = pos
-                pic.save(f'{Bird.path}drawing{num}.png')
-                time.sleep(2)
-    
-    def view_notes(self):
-        files = os.listdir()
-        nums = []
-        for i in files:
-            if 'drawing' in i:
-                nums.append(int(i[7]))
-        self.Display.show_notes(len(nums))
-        if self.has_new_input:
-            self.note_mode = 'menu'
-    
     def update(self):
         self.has_new_input = True
         self.x, self.y = self.Display.get_input()
@@ -218,15 +140,7 @@ class Bird:
             elif self.mode == 'camera':
                 self.camera_app()
             elif self.mode == 'notes':
-                if self.note_mode == 'menu':
-                    self.note_menu()
-                elif self.note_mode == 'text':
-                    self.text_notes()
-                elif self.note_mode == 'draw':
-                    self.draw_notes()
-                elif self.note_mode == 'view':
-                    self.view_notes()
-     
+                self.Display, self.mode, self.in_menu = self.notes.update(self.Display, self.has_new_input, self.x, self.y)
         else:
             self.home_page()
         
