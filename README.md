@@ -412,3 +412,54 @@ Past me is such a clever little cookie :) Very glad I checked my code and wiring
 
 
 !! Oops sorry scratch that, GPIO 24 is being used by the accelerometer, using GPIO 12 instead
+
+## December 31, 2024 / January 1, 2025
+Happy New Year everybody! This seems like the perfect time to do a stock take and collect myself, as I've done a lot of different things this year that I need to organise and document properly. Also, I got all my components from my wishlist for Christmas.
+
+![WIN_20250101_09_13_06_Pro](https://github.com/user-attachments/assets/48ff5cf1-0099-4863-b353-bd26b816a408)
+
+So, what's going to be in the galah?
+- Raspberry Pi Zero 2 W
+- Waveshare Round 1.28inch Touch LCD
+- 3.7V 2000mAh LiPo battery
+- Telstra LTE 4GX usb modem
+- Raspberry Pi camera
+- Raspberry Pi camera cable for Pi Zero
+- SD card with Raspbian OS for Pi Zero
+- USB microphone
+- Adafruit Mini USB 4-Port Hub
+- Adafruit PowerBoost 500 Charger board
+- ADXL345 Accelerometer
+- 3 x 9g micro servos
+- Mini HDMI to HDMI adapter
+- solderable USB sockets
+- custom PCB HAT (TBC)
+- small speaker/piezo buzzer
+- BC557 transistor (for audio amplification)
+- 10uF electrolytic capacitor
+- 150 ohm resistor
+- 270 ohm resistor
+- 33 nF ceramic capacitor
+- male and female header pins (lots idk how many)
+
+Also possibly needed:
+- hdmi cable
+- usb mouse and keyboard
+- monitor
+- micro-usb power source for charging
+- soldering equipment
+- optional led or sensor for eye
+
+Next up, software settings:
+- Raspbian OS for Pi Zero 2 W
+- connect to home wifi
+- connect to modem by going to `192.168.0.1`
+- raspberry pi configuration enable SPI, I2C, set timezone and locale
+- alsamixer confirm microphone connection
+- open config.txt with `sudo nano /boot/config.txt` and add `dtoverlay=pwm,pin=13,func=4` to the bottom, then save and close
+- install all python modules by downloading requirements.txt file and running `pip3 install -r /path/to/requirements.txt` (obviously change the path to what it is)
+- download all the code and put it on the desktop, check all path names are right by running code on the command line `python3 /home/pi/Desktop/galah/bird.py` (or whatever the file is called)
+- run the code and make any changes you need to, there may be compatibility errors
+- edit `/home/pi/etc/rc.local` and add the line `sudo python3 /home/pi/Desktop/galah/bird.py &`, which should make your code run on startup but in the background so that if it crashes you can still use the raspberry pi
+
+I think that's it, but I'll have to confirm once I have the PCB and run it through for real. Fingers crossed 🤞❤️✨🦜
