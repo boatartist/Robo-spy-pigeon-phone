@@ -4,7 +4,7 @@ from check_for_internet import *
 import time
 from wifi import *
 from stt import get_speech
-from picamera import PiCamera
+from picamera2 import Picamera2, Preview
 from io import BytesIO
 from PIL import Image, ImageDraw
 import weather
@@ -29,7 +29,7 @@ class Bird:
         self.prev_x, self.prev_y = 0, 0
         self.x, self.y = 0, 0
         self.has_new_input = False
-        self.camera = PiCamera()
+        self.camera = Picamera2()
         self.camera.resolution = (240, 240)
         self.camera_stream = BytesIO()
         self.notes = notes.Notes()
@@ -107,10 +107,12 @@ class Bird:
     
     def camera_app(self):
         if not self.is_streaming:
-            self.camera.start_preview()
+            self.camera.start_preview(Preview.QTGL)
+            self.camera.configure(self.camera.preview_configuration)
+            self.camera.start()
             self.is_streaming = True
         self.camera_stream = BytesIO()
-        self.camera.capture(self.camera_stream, format='jpeg')
+        self.camera.capture_file(self.camera_stream, format='jpeg')
         self.camera_stream.seek(0)
         img = Image.open(self.camera_stream)
         self.Display.camera_stream(img)
