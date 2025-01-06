@@ -456,7 +456,7 @@ Next up, software settings:
 - connect to modem by going to `192.168.0.1`
 - raspberry pi configuration enable SPI, I2C, set timezone and locale
 - alsamixer confirm microphone connection
-- open config.txt with `sudo nano /boot/firmware/config.txt` and add `dtoverlay=pwm,pin=13,func=4` to the bottom, then save and close
+- open config.txt with `sudo nano /boot/firmware/config.txt` and add `dtoverlay=audremap,pin=13,func=4` to the bottom, then save and close
 - install all python modules with `sudo apt install python3-xyz`, where xyz is the name of each package, (pip is broken in newer versions of raspbian so we need to do it one at a time)
 - install espeak with `sudo apt install -y espeak`
 - install vosk (stt) with `pip3 install vosk --break-system-packages` (yes it's a bit sketchy but it didnt' work with python3)
@@ -464,6 +464,7 @@ Next up, software settings:
 - download all the code and put it on the desktop; command line: `wget https://github.com/boatartist/Robo-spy-pigeon-phone/raw/refs/heads/main/galah.zip`
 - check all path names are right by running code on the command line `python3 /home/pi/Desktop/galah/bird.py` (or whatever the file is called)
 - run the code and make any changes you need to, there may be compatibility errors
+- (change the gpio pin for the speaker power from gpio 24 to gpio 12)
 - edit `/home/pi/etc/rc.local` and add the line `sudo python3 /home/pi/Desktop/galah/bird.py &`, which should make your code run on startup but in the background so that if it crashes you can still use the raspberry pi
 
 I think that's it, but I'll have to confirm once I have the PCB and run it through for real. Fingers crossed 🤞❤️✨🦜
