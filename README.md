@@ -465,6 +465,7 @@ Next up, software settings:
 - check all path names are right by running code on the command line `python3 /home/pi/Desktop/galah/bird.py` (or whatever the file is called)
 - run the code and make any changes you need to, there may be compatibility errors
 - (change the gpio pin for the speaker power from gpio 24 to gpio 12)
+- right click on the audio icon in the top right of the screen, increase the volume, in device profiles turn off hdmi audio and check that av jack is enabled in stereo.
 - edit `/home/pi/etc/rc.local` and add the line `sudo python3 /home/pi/Desktop/galah/bird.py &`, which should make your code run on startup but in the background so that if it crashes you can still use the raspberry pi
 
 I think that's it, but I'll have to confirm once I have the PCB and run it through for real. Fingers crossed 🤞❤️✨🦜
