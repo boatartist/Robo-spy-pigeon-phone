@@ -472,3 +472,9 @@ I think that's it, but I'll have to confirm once I have the PCB and run it throu
 
 
 looking at how to connect to any wifi network over the command line: [connecting to a network](https://fleetstack.io/blog/raspberry-pi-connect-to-wifi-command-line), [finding available networks](https://retropie.org.uk/docs/Wifi/#:~:text=To%20scan%20for%20WiFi%20networks,along%20with%20other%20useful%20information)
+
+
+## January 7, 2025
+hehe guess who ordered the wrong version and now finally has 5 of the wrong pcb ❤️. Actually it's not *that* bad, but this prototype doesn't have the transistor or the accelerometer in the right way, might order a new one. It does looks pretty cool tho.
+
+![image](https://github.com/user-attachments/assets/8b5e3ad1-50fe-43c3-8a72-f70f5e64c930)
