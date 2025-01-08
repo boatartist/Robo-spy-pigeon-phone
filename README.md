@@ -478,3 +478,14 @@ looking at how to connect to any wifi network over the command line: [connecting
 hehe guess who ordered the wrong version and now finally has 5 of the wrong pcb ❤️. Actually it's not *that* bad, but this prototype doesn't have the transistor or the accelerometer in the right way, might order a new one. It does looks pretty cool tho.
 
 ![image](https://github.com/user-attachments/assets/8b5e3ad1-50fe-43c3-8a72-f70f5e64c930)
+
+## January 8, 2025
+Was trying to install accelerometer code but it needed a whole bunch of non-existent libraries (very annoying that pip doesn't work anymore), so I found [another tutorial](https://how2electronics.com/measuring-acceleration-with-adxl345-accelerometer-raspberry-pi/) and put the code on this github, will test later. 
+
+I was also thinking about how I can improve my PCB before I reorder it, I've got the LCD working after some dodgy soldering had me doubting my entire program, but I still think I'm going to make all the paths wider and I actually like the positioning of the accelerometer over the board, very cute and more compact.
+
+Another discovery I made was that we can put a switch on the output of the power boost module to turn off the output but still allow charging, which we definitely need all the time because the discharge is faster than the charge or something. When we do that I just need to put a switch between the EN (enable) pin and ground, which is a much better option than what I was thinking of doing (ie. cutting the battery cable and putting a switch in there), and it won't have to bear all the current from the battery.
+
+‼️Reminder to myself to charge the battery fully whenever I can, I've never seen it at full charge but there should be a green LED when it is.
+
+‼️Another reminder that I need to look at the resistor-capacitor circuit on the speaker, there might be a more advanced and better version because rn it is very bad.
