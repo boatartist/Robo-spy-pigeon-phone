@@ -456,7 +456,7 @@ Next up, software settings:
 - connect to modem by going to `192.168.0.1`
 - raspberry pi configuration enable SPI, I2C, set timezone and locale
 - alsamixer confirm microphone connection
-- open config.txt with `sudo nano /boot/firmware/config.txt` and add `dtoverlay=audremap,pin=13,func=4` to the bottom, then save and close
+- open config.txt with `sudo nano /boot/firmware/config.txt` and add `dtoverlay=audremap,pin=13,func=4` to the bottom, as well as `dtoverlay=i2c-gpio,bus=4,i2c_gpio_delay_us=1,i2c_gpio_sda=23,i2c_gpio_scl=24` where spi is enabled, then save and close
 - install all python modules with `sudo apt install python3-xyz`, where xyz is the name of each package, (pip is broken in newer versions of raspbian so we need to do it one at a time)
 - install espeak with `sudo apt install -y espeak`
 - install vosk (stt) with `pip3 install vosk --break-system-packages` (yes it's a bit sketchy but it didnt' work with python3)
