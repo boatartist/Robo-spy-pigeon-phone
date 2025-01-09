@@ -489,3 +489,7 @@ Another discovery I made was that we can put a switch on the output of the power
 ‼️Reminder to myself to charge the battery fully whenever I can, I've never seen it at full charge but there should be a green LED when it is.
 
 ‼️Another reminder that I need to look at the resistor-capacitor circuit on the speaker, there might be a more advanced and better version because rn it is very bad.
+
+## January 9, 2025
+Am making a tensorflow/teachable machine based letter identifier to mimic the apple watch draw to type functionality, but have been having issues trying to install tensorflow lite to actually use this module, [this tutorial](https://pimylifeup.com/raspberry-pi-tensorflow-lite/) seems like my best hope so far but idk it's not quite working.
+Yk what, we're just going to break the rules, install tensorflow lite with `pip3 install tflite-runtime --break-system-packages` 
