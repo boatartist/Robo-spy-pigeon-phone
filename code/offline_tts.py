@@ -11,4 +11,4 @@ def speak(text='Hello World', speaker_on=True):
     speaker.off()
     
 if __name__ == '__main__':
-    speak()
+    speak('hello, i am a robot, running on a raspberry pi zero, i am not broken. Please, do not break.')

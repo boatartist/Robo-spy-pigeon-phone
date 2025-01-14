@@ -3,6 +3,7 @@ import spidev as SPI
 from PIL import Image, ImageDraw, ImageFont
 from lib import LCD_1inch28, Touch_1inch28
 import os
+import time
 
 class Display:
     path = '/home/pi/Desktop/galah/'
@@ -103,7 +104,7 @@ class Display:
         self.write(text='e', coordinates=(216, 88))
         self.write(text='w', coordinates=(216, 112))
         
-    def draw_notes(self, drawing=[]):
+    def draw_notes(self, drawing=Image.new('RGB', (192, 192), 'white'), note=''):
         self.fill_colour(colour='white')
         self.rectangle(coordinates=(0, 0, 24, 240), fill='red')
         self.rectangle(coordinates=(0, 216, 240, 240), fill='green')
@@ -115,13 +116,12 @@ class Display:
         self.write(text='i', coordinates=(4, 112))
         self.write(text='t', coordinates=(4, 136))
         
-        self.write(text='n', coordinates=(216, 64))
-        self.write(text='e', coordinates=(216, 88))
-        self.write(text='w', coordinates=(216, 112))
-        prev = (0, 0)
-        for pos in drawing:
-            self.line(prev, pos, 2)
-            prev = pos
+        self.write(text='->', coordinates=(216, 64))
+        
+        self.write(text='X', coordinates=(216, 112))
+        
+        self.image.paste(drawing, (24, 24))
+        self.write(text=note, coordinates=(50, 10))
         
     def notes_menu(self):
         self.four_menu(colours=['white', 'green', 'blue', 'red'])
@@ -134,8 +134,8 @@ class Display:
         self.fill_colour('black')
         for i in range(num_imgs):
             img = Image.open(f'{Display.path}drawing{i}.png').resize((60, 60))
-            x = i%2 * 60
-            y = 60 + i//2*60
+            x = i%4 * 60
+            y = 60 + i//4*60
             self.image.paste(img, (x, y))
             
     def home_screen(self, weather_info='weather', icon_url='/home/pi/Desktop/galah/current_weather.png', time='00:00'):
@@ -146,7 +146,13 @@ class Display:
         self.write(text=weather_info[1], coordinates=(40, 100))
         self.write(text=time, coordinates=(20, 160))
         
+    def loading(self):
+        self.fill_colour('white')
+        self.write(text='loading...', coordinates=(40, 100))
+        self.update()
+        
 if __name__ == '__main__':
     d = Display()
-    d.home_screen()
+    d.main_menu()
     d.update()
+    time.sleep(5)
