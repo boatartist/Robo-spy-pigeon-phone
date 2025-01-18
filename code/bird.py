@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/home/pi/Desktop/galah')
 import offline_tts
 import display
 from check_for_internet import *
@@ -12,6 +14,7 @@ from datetime import datetime
 import notes
 from accelerometer import ADXL345
 import servo
+import camera
 
 class Bird:
     wifi_modes = ['wifi', 'sim', 'none']
@@ -32,9 +35,7 @@ class Bird:
         self.prev_x, self.prev_y = 0, 0
         self.x, self.y = 0, 0
         self.has_new_input = False
-        self.camera = Picamera2()
-        self.camera.resolution = (240, 240)
-        self.camera_stream = BytesIO()
+        self.camera = camera.CameraApp()
         self.notes = notes.Notes()
         self.is_streaming = False
         self.is_startup = True
@@ -53,7 +54,10 @@ class Bird:
         self.now = now.strftime("%H:%M %d/%m/%Y")
         if current_time - self.weather_time >= 5 or self.is_startup:
             print('starting startup checks')
-            weather_info = weather.get_weather()
+            try:
+                weather_info = weather.get_weather()
+            except:
+                weather_info = ['No weather data', '']
             print('got weather, finally')
             if weather_info:
                 self.weather_info = [f'{weather_info[0]}°C', weather_info[1]]
@@ -119,28 +123,12 @@ class Bird:
                 self.in_menu = True
     
     def camera_app(self):
-        if not self.is_streaming:
-            self.camera.start_preview(Preview.QTGL)
-            camera_config = self.camera.create_still_configuration(main={'size': (240, 240)}, lores={'size':(240,240)}, display='lores')
-            self.camera.configure(camera_config)
-            self.camera.start()
-            self.is_streaming = True
-        self.camera_stream = BytesIO()
-        self.camera.capture_file(self.camera_stream, format='jpeg')
-        self.camera_stream.seek(0)
-        img = Image.open(self.camera_stream)
-        self.Display.camera_stream(img)
-        if self.has_new_input:
-            now = datetime.now()
-            timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
-            self.camera.capture_file(f'{Bird.path}{timestamp}.jpg')
-            self.camera.stop_preview()
-            self.camera.stop()
-            self.is_streaming = False
+        output = self.camera.update(self.Display, self.x, self.y, self.has_new_input)
+        if output:
+            self.Display = output
+        else:
             self.mode = None
             self.in_menu = True
-            self.Display.image = Image.new('RGB', (240, 240), 'WHITE')
-            self.Display.draw = ImageDraw.Draw(self.Display.image)
     
     def update(self):
         if self.frame == 500:
