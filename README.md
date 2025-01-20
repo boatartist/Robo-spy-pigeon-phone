@@ -493,3 +493,11 @@ Another discovery I made was that we can put a switch on the output of the power
 ## January 9, 2025
 Am making a tensorflow/teachable machine based letter identifier to mimic the apple watch draw to type functionality, but have been having issues trying to install tensorflow lite to actually use this module, [this tutorial](https://pimylifeup.com/raspberry-pi-tensorflow-lite/) seems like my best hope so far but idk it's not quite working.
 Yk what, we're just going to break the rules, install tensorflow lite with `pip3 install tflite-runtime --break-system-packages` 
+
+## January 20, 2025
+Things I have done that I forgot to document (all code is updated tho)
+- created the file `/lib/systemd/system/bird.service` which auto-runs the program on startup, I'll put that in the code somewhere.
+- fixed the camera app to run without a monitor using a different Preview
+- created a camera menu, featuring options to photograph, video (unimplemented) or view images in a gallery
+- finished making the draw-to-type notes app, only with lowercase and spaces so far
+- used ssh instead of switching monitors between my pi and desktop ;)
