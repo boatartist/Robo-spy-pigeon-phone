@@ -138,13 +138,14 @@ class Display:
             y = 60 + i//4*60
             self.image.paste(img, (x, y))
             
-    def home_screen(self, weather_info='weather', icon_url='/home/pi/Desktop/galah/current_weather.png', time='00:00'):
+    def home_screen(self, weather_info='weather', icon_url='/home/pi/Desktop/galah/current_weather.png', time='00:00', pitch=0, roll=0):
         self.fill_colour('white')
         img = Image.open(icon_url).convert('RGBA').resize((60, 60))
         self.image.paste(img, (40, 40))
         self.write(text=weather_info[0], coordinates=(110, 40))
         self.write(text=weather_info[1], coordinates=(40, 100))
         self.write(text=time, coordinates=(20, 160))
+        self.write(text=f'Pitch: {round(pitch, 1)}° Roll: {round(roll, 1)}°', coordinates=(20, 130))
         
     def loading(self):
         self.fill_colour('white')
