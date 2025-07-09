@@ -45,6 +45,8 @@ class Bird:
         self.weather_time = int(now.strftime('%H%M'))
         self.now = now.strftime("%H:%M %d/%m/%Y")
         self.accelerometer = ADXL345()
+        self.pitch = 0
+        self.roll = 0
         self.frame = 0
         self.servo1 = servo.Servo(21)
         
@@ -65,7 +67,7 @@ class Bird:
                 self.weather_info = ['No weather data','']
             self.is_startup = False
             self.weather_time = current_time
-        self.Display.home_screen(weather_info = self.weather_info, time = self.now)
+        self.Display.home_screen(weather_info = self.weather_info, time = self.now, pitch = self.pitch, roll = self.roll)
         if self.has_new_input:
             self.in_menu = True
     
@@ -131,10 +133,10 @@ class Bird:
             self.in_menu = True
     
     def update(self):
-        if self.frame == 500:
-            pitch, roll = self.accelerometer.get_tilt_angles()
-            self.servo1.correct_angle(roll)
-            print(f'leaning forward {round(roll, 2)}°, sideways {round(pitch, 2)}°')
+        if self.frame == 50:
+            self.pitch, self.roll = self.accelerometer.get_tilt_angles()
+            self.servo1.correct_angle(self.pitch)
+            print(f'leaning forward {round(self.pitch, 2)}°, sideways {round(self.roll, 2)}°')
             self.frame = 0
         self.has_new_input = True
         self.x, self.y = self.Display.get_input()
