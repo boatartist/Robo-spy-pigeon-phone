@@ -135,8 +135,8 @@ class Bird:
     def update(self):
         if self.frame == 50:
             self.pitch, self.roll = self.accelerometer.get_tilt_angles()
-            self.servo1.correct_angle(self.pitch)
-            print(f'leaning forward {round(self.pitch, 2)}°, sideways {round(self.roll, 2)}°')
+            self.servo1.correct_angle(self.roll)
+            print(f'leaning forward {round(self.roll, 2)}°, sideways {round(self.pitch, 2)}°')
             self.frame = 0
         self.has_new_input = True
         self.x, self.y = self.Display.get_input()
