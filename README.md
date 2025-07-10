@@ -501,3 +501,16 @@ Things I have done that I forgot to document (all code is updated tho)
 - created a camera menu, featuring options to photograph, video (unimplemented) or view images in a gallery
 - finished making the draw-to-type notes app, only with lowercase and spaces so far
 - used ssh instead of switching monitors between my pi and desktop ;)
+
+## July 10, 2025
+(Note to self, to use ssh with desktop type `ssh pi@192.168.0.81` with password galah.) Oh damn it's been a while, HSC huh.
+
+I want to get the accelerometer balancing servo thing working, so I've done a lot of tinkering with that, including getting the pitch and roll shown on the home screen and when that wasn't the issue I did some research into the servo so in the next pcb it will be powered from the 5V not the 3.3V pin, and I'm going to try changing the maximum and minimum pulse widths to the defaults according to [this useful webpage](https://picockpit.com/raspberry-pi/servo-pico-w-pulse-width-modulation/) which has a datasheet for the SG90 microservo that I'm using. [This](https://gpiozero.readthedocs.io/en/stable/api_output.html#angularservo) is the link to the AngularServo API.
+
+Completely forgot the name of the PCB software, which is Easy EDA, so I'm trying to type out all the important things to be able to search so that doesn't happen again. 
+
+![image](https://github.com/user-attachments/assets/626e87ba-9505-4382-8cd5-54c7ea1689c0)
+
+Wiring diagram if you're into that sort of thing, needs improvement ik.
+
+I'm using a paperclip to bridge between the EN and GND pins on the DC converter/battery charger board to stop it losing charge instead of the permanent switch or disconnecting the battery from the board.
