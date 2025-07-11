@@ -15,12 +15,14 @@ import notes
 from accelerometer import ADXL345
 import servo
 import camera
+import os
 
 class Bird:
     wifi_modes = ['wifi', 'sim', 'none']
     non_existent_modes = ['texts']
     path = '/home/pi/Desktop/galah/'
     def __init__(self):
+        os.system('sudo pigpiod')
         self.Display = display.Display()
         self.Display.switch_mode(1)
         self.Display.loading()
@@ -49,6 +51,12 @@ class Bird:
         self.roll = 0
         self.frame = 0
         self.servo1 = servo.Servo(21)
+        #some checks that the servo is working
+        self.servo1.correct_angle(0)
+        time.sleep(1)
+        self.servo1.correct_angle(90)
+        time.sleep(1)
+        self.servo1.correct_angle(0)
         
     def home_page(self):
         now = datetime.now()
@@ -135,7 +143,7 @@ class Bird:
     def update(self):
         if self.frame == 50:
             self.pitch, self.roll = self.accelerometer.get_tilt_angles()
-            self.servo1.correct_angle(self.roll)
+            self.servo1.correct_angle(self.roll) #ik this is backwards but the accelerometer is mounted sideways
             print(f'leaning forward {round(self.roll, 2)}°, sideways {round(self.pitch, 2)}°')
             self.frame = 0
         self.has_new_input = True
