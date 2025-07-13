@@ -514,3 +514,18 @@ Completely forgot the name of the PCB software, which is Easy EDA, so I'm trying
 Wiring diagram if you're into that sort of thing, needs improvement ik.
 
 I'm using a paperclip to bridge between the EN and GND pins on the DC converter/battery charger board to stop it losing charge instead of the permanent switch or disconnecting the battery from the board.
+
+## July 13, 2025
+Yes, I am very fancy. For proof, see how well I've updated the wiring diagram it is absolutely stunning.
+
+<img width="826" height="583" alt="Schematic_galah-pcb-for-pi-zero_2025-07-13 (1)" src="https://github.com/user-attachments/assets/8ae7e5a5-e599-48cf-a8a5-757b20a99939" />
+
+This manifests in a very nice looking PCB as well (Gerber in files).
+
+<img width="640" height="1378" alt="image" src="https://github.com/user-attachments/assets/dc37cfa5-785f-4e79-83f6-c9059799cf35" />
+
+And of course, I've finally given up on making claws and we have a very nice balancing platform for the components which *hem hem* auto adjusts to keep everything level. The platform is secured to the base at the servo and another pivot at the back, so it's nice and stable, and I've used actual screws to mount the servo, and some M2.5 bolts I had lying around to mount the screen. (actually that last part is slightly untrue because it's mounted by the one screw I could find and a spacer, but I'll get there). 
+
+<img width="1813" height="1581" alt="image" src="https://github.com/user-attachments/assets/4b7a55f9-5ca8-4f08-a0c1-e0ffa4fb7305" />
+
+<img width="715" height="1015" alt="image" src="https://github.com/user-attachments/assets/b73b5d1a-cae8-4f3f-b5a0-fe75439504f0" />
